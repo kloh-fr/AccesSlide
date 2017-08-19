@@ -541,50 +541,12 @@ img.center {
 	margin-top: 0;
 }
 
-.btn-github {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 950;
-}
-
 #Caudio {
 	display: none;
 }
 
 .icon {
 	display: none;
-}
-
-.fontawesome .icon {
-	display: inline-block;
-}
-
-.fontawesome .icon:before {
-	display: inline-block;
-	font: normal normal normal 1em/1 FontAwesome;
-	font-size: inherit;
-	text-rendering: auto;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-transform: translate(0, 0);
-	-ms-transform: translate(0, 0);
-	transform: translate(0, 0);
-}
-
-.fontawesome .text {
-	position: absolute;
-	width: 0;
-	height: 0;
-	overflow: hidden;
-}
-
-.fontawesome a[href*="twitter.com"] .icon:before {
-	content: "\f099";
-}
-
-.fontawesome a[href*="github.com"] .icon:before {
-	content: "\f09b";
 }
 
 .is-hidden {
