@@ -1,5 +1,4 @@
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
-
 /**
  * 1. Set default font family to sans-serif.
  * 2. Prevent iOS text size adjust after orientation change, without disabling
@@ -15,21 +14,18 @@ html {
 /**
  * Remove default margin.
  */
-
 body {
 	margin: 0;
 }
 
 /* HTML5 display definitions
    ========================================================================== */
-
 /**
  * Correct `block` display not defined for any HTML5 element in IE 8/9.
  * Correct `block` display not defined for `details` or `summary` in IE 10/11
  * and Firefox.
  * Correct `block` display not defined for `main` in IE 11.
  */
-
 article,
 aside,
 details,
@@ -50,7 +46,6 @@ summary {
  * 1. Correct `inline-block` display not defined in IE 8/9.
  * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
  */
-
 audio,
 canvas,
 progress,
@@ -63,7 +58,6 @@ video {
  * Prevent modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
-
 audio:not([controls]) {
 	display: none;
 	height: 0;
@@ -73,7 +67,6 @@ audio:not([controls]) {
  * Address `[hidden]` styling not present in IE 8/9/10.
  * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
  */
-
 [hidden],
 template {
 	display: none;
@@ -81,11 +74,9 @@ template {
 
 /* Links
    ========================================================================== */
-
 /**
  * Remove the gray background color from active links in IE 10.
  */
-
 a {
 	background-color: transparent;
 }
@@ -93,7 +84,6 @@ a {
 /**
  * Improve readability when focused and also mouse hovered in all browsers.
  */
-
 a:active,
 a:hover {
 	outline: 0;
@@ -101,11 +91,9 @@ a:hover {
 
 /* Text-level semantics
    ========================================================================== */
-
 /**
  * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
  */
-
 abbr[title] {
 	border-bottom: 1px dotted;
 }
@@ -113,7 +101,6 @@ abbr[title] {
 /**
  * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
  */
-
 b,
 strong {
 	font-weight: bold;
@@ -122,7 +109,6 @@ strong {
 /**
  * Address styling not present in Safari and Chrome.
  */
-
 dfn {
 	font-style: italic;
 }
@@ -131,7 +117,6 @@ dfn {
  * Address variable `h1` font-size and margin within `section` and `article`
  * contexts in Firefox 4+, Safari, and Chrome.
  */
-
 h1 {
 	font-size: 2em;
 	margin: 0.67em 0;
@@ -140,7 +125,6 @@ h1 {
 /**
  * Address styling not present in IE 8/9.
  */
-
 mark {
 	background: #ff0;
 	color: #000;
@@ -149,7 +133,6 @@ mark {
 /**
  * Address inconsistent and variable font size in all browsers.
  */
-
 small {
 	font-size: 80%;
 }
@@ -157,7 +140,6 @@ small {
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
-
 sub,
 sup {
 	font-size: 75%;
@@ -176,11 +158,9 @@ sub {
 
 /* Embedded content
    ========================================================================== */
-
 /**
  * Remove border when inside `a` element in IE 8/9/10.
  */
-
 img {
 	border: 0;
 }
@@ -188,18 +168,15 @@ img {
 /**
  * Correct overflow not hidden in IE 9/10/11.
  */
-
 svg:not(:root) {
 	overflow: hidden;
 }
 
 /* Grouping content
    ========================================================================== */
-
 /**
  * Address margin not present in IE 8/9 and Safari.
  */
-
 figure {
 	margin: 1em 40px;
 }
@@ -207,7 +184,6 @@ figure {
 /**
  * Address differences between Firefox and other browsers.
  */
-
 hr {
 	box-sizing: content-box;
 	height: 0;
@@ -216,7 +192,6 @@ hr {
 /**
  * Contain overflow in all browsers.
  */
-
 pre {
 	overflow: auto;
 }
@@ -224,7 +199,6 @@ pre {
 /**
  * Address odd `em`-unit font size rendering in all browsers.
  */
-
 code,
 kbd,
 pre,
@@ -235,19 +209,16 @@ samp {
 
 /* Forms
    ========================================================================== */
-
 /**
  * Known limitation: by default, Chrome and Safari on OS X allow very limited
  * styling of `select`, unless a `border` property is set.
  */
-
 /**
  * 1. Correct color not being inherited.
  *    Known issue: affects color of disabled elements.
  * 2. Correct font properties not being inherited.
  * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
  */
-
 button,
 input,
 optgroup,
@@ -261,7 +232,6 @@ textarea {
 /**
  * Address `overflow` set to `hidden` in IE 8/9/10/11.
  */
-
 button {
 	overflow: visible;
 }
@@ -272,7 +242,6 @@ button {
  * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
  * Correct `select` style inheritance in Firefox.
  */
-
 button,
 select {
 	text-transform: none;
@@ -285,7 +254,6 @@ select {
  * 3. Improve usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-
 button,
 html input[type="button"],
 input[type="reset"],
@@ -297,7 +265,6 @@ input[type="submit"] {
 /**
  * Re-set default cursor for disabled elements.
  */
-
 button[disabled],
 html input[disabled] {
 	cursor: default;
@@ -306,7 +273,6 @@ html input[disabled] {
 /**
  * Remove inner padding and border in Firefox 4+.
  */
-
 button::-moz-focus-inner,
 input::-moz-focus-inner { /*  border: 0;*/ /*  padding: 0;*/
 }
@@ -315,7 +281,6 @@ input::-moz-focus-inner { /*  border: 0;*/ /*  padding: 0;*/
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-
 input {
 	line-height: normal;
 }
@@ -327,7 +292,6 @@ input {
  * 1. Address box sizing set to `content-box` in IE 8/9/10.
  * 2. Remove excess padding in IE 8/9/10.
  */
-
 input[type="checkbox"],
 input[type="radio"] {
 	box-sizing: border-box; /* 1 */
@@ -339,7 +303,6 @@ input[type="radio"] {
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
  */
-
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
 	height: auto;
@@ -350,7 +313,6 @@ input[type="number"]::-webkit-outer-spin-button {
  * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
  *    (include `-moz` to future-proof).
  */
-
 input[type="search"] {
 	-webkit-appearance: textfield; /* 1 */ /* 2 */
 	box-sizing: content-box;
@@ -361,7 +323,6 @@ input[type="search"] {
  * Safari (but not Chrome) clips the cancel button when the search input has
  * padding (and `textfield` appearance).
  */
-
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
 	-webkit-appearance: none;
@@ -370,7 +331,6 @@ input[type="search"]::-webkit-search-decoration {
 /**
  * Define consistent border, margin, and padding.
  */
-
 fieldset {
 	border: 1px solid #c0c0c0;
 	margin: 0 2px;
@@ -381,7 +341,6 @@ fieldset {
  * 1. Correct `color` not being inherited in IE 8/9/10/11.
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  */
-
 legend {
 	border: 0; /* 1 */
 	padding: 0; /* 2 */
@@ -390,7 +349,6 @@ legend {
 /**
  * Remove default vertical scrollbar in IE 8/9/10/11.
  */
-
 textarea {
 	overflow: auto;
 }
@@ -399,18 +357,15 @@ textarea {
  * Don't inherit the `font-weight` (applied by a rule above).
  * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
  */
-
 optgroup {
 	font-weight: bold;
 }
 
 /* Tables
    ========================================================================== */
-
 /**
  * Remove most spacing between table cells.
  */
-
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -474,7 +429,6 @@ LAYOUT
  * @section 1. GENERIC STYLE
  * -------------------------
  */
-
 * {
 	box-sizing: border-box;
 }
@@ -562,7 +516,6 @@ img.center {
  * @section 2. MAIN LAYOUT
  * -------------------------
  */
-
 #Dcourante {
 	position: absolute;
 	top: -10000000000px;
@@ -575,7 +528,6 @@ img.center {
 }
 
 /** @subsection 2.1 HEADER **/
-
 .main-header {
 	position: relative;
 	z-index: 900;
@@ -614,7 +566,6 @@ img.center {
 }
 
 /** @subsection 2.2 WRAPPER **/
-
 #wrapper {
 	position: relative;
 	height: 80%;
@@ -630,7 +581,6 @@ img.center {
 }
 
 /* @subsection 2.3 VOLET */
-
 #volet {
 	width: 100%;
 	position: absolute;
@@ -648,7 +598,6 @@ img.center {
  * @section 3. TOOLBAR
  * -------------------------
  */
-
 .tool-bar {
 	position: absolute;
 	z-index: 3;
@@ -664,7 +613,6 @@ img.center {
 }
 
 /** @subsection 3.1 NAVIGATION BLOCK**/
-
 #navbar {
 	padding: 0;
 }
@@ -675,7 +623,6 @@ img.center {
 }
 
 /** @subsection 3.2 NAVIGATION ELEMENTS**/
-
 #navbar li {
 	float: left;
 	margin: 0;
@@ -739,14 +686,12 @@ img.center {
 }
 
 /* Page select */
-
 .select-goto {
 	float: left;
 	font-size: 85%;
 }
 
 /* Slide counter */
-
 .slide-counter {
 	position: relative;
 	font-weight: bold;
@@ -764,7 +709,6 @@ img.center {
 }
 
 /** @subsection 3.3 RELATED LINKS**/
-
 .related {
 	float: left;
 	padding: 0;
@@ -783,7 +727,6 @@ img.center {
  * @section 4. SLIDES
  * -------------------------
  */
-
 .slide {
 	position: relative;
 	opacity: 0;
@@ -804,12 +747,12 @@ img.center {
 	width: 75%;
 }
 
-.modeplan .couv { /* first slide*/
+/* first slide*/
+.modeplan .couv {
 	margin-top: 0;
 }
 
 /* last slide*/
-
 .modeplan .end {
 	margin-bottom: 50px;
 }
@@ -819,7 +762,6 @@ img.center {
  * @section 5. PAGINATION SLIDE LINEAR LAYOUT
  * -------------------------
  */
-
 .index { /** pagination only visible when linear layout (modeplan) is active **/
 	position: absolute;
 	top: -13px;
@@ -840,7 +782,6 @@ img.center {
  * @section 6. TOOL BLOCK (SUMMARY & CONFIG)
  * -------------------------
  */
-
 .tool-block {
 	display: none;
 	position: absolute;
@@ -855,7 +796,6 @@ img.center {
 }
 
 /** @subsection 6.1 TOOLS ELEMENTS **/
-
 .tool-block-title {
 	margin-top: 0;
 	padding-bottom: 0.3em;
@@ -924,7 +864,6 @@ img.center {
 /*
  * @section CSS Effect
  */
-
 /* 
  *@subsection horizontal
  */
@@ -947,7 +886,6 @@ img.center {
 /* 
  *@subsection vertical
  */
-
 #volet.ATtoB {
 	display: block;
 	-webkit-animation: bottom-top 2s ease;
@@ -957,7 +895,6 @@ img.center {
 /* 
  *@subsection top-bottom
  */
-
 #volet.ATtoT {
 	display: block;
 	-webkit-animation: top-bottom 2s ease;
@@ -967,7 +904,6 @@ img.center {
 /*
  * @subsection fade in
  */
-
 .slide.fadein {
 	-webkit-animation: fadein 1.5s linear;
 	animation: fadein 1.5s linear;
@@ -976,7 +912,6 @@ img.center {
 /*
  * @subsection Flash Effect
  */
-
 #volet.Flash {
 	display: block;
 	-webkit-animation: flash 2s ease;
@@ -986,7 +921,6 @@ img.center {
 /*
  * @subsection Scale Effect
  */
-
 .slide.Escale {
 	display: block;
 	-webkit-animation: scale 1s ease-out;
@@ -996,7 +930,6 @@ img.center {
 /*
  * @subsection Flip effet
  */
-
 .slide.Flip {
 	-webkit-animation: flip 1s ease-out;
 	animation: flip 1s ease-out;
@@ -1006,361 +939,327 @@ img.center {
 }
 
 @media screen and (min-width: 48em) {
+	#screen {
+		position: relative;
+		height: 100%;
+		margin: 0 auto;
+		z-index: 0;
+		overflow-y: hidden;
+	}
 
-#screen {
-	position: relative;
-	height: 100%;
-	margin: 0 auto;
-	z-index: 0;
-	overflow-y: hidden;
-}
+	.main-header {
+		margin: 0 0 5px 0;
+		padding: 0 12%;
+	}
 
-.main-header {
-	margin: 0 0 5px 0;
-	padding: 0 12%;
-}
+	#wrapper {
+		padding: 0 0.3em 0.3em 0.3em;
+	}
 
-#wrapper {
-	padding: 0 0.3em 0.3em 0.3em;
-}
+	.tool-bar {
+		width: 100%;
+		min-height: 40px;
+		bottom: 0px;
+	}
 
-.tool-bar {
-	width: 100%;
-	min-height: 40px;
-	bottom: 0px;
-}
+	#wrappernav {
+		margin: auto;
+		padding: 0 12%;
+	}
 
-#wrappernav {
-	margin: auto;
-	padding: 0 12%;
-}
+	#navbar {
+		float: right;
+		margin-right: -10px;
+	}
 
-#navbar {
-	float: right;
-	margin-right: -10px;
-}
+	.related {
+		margin-top: 12px;
+	}
 
-.related {
-	margin-top: 12px;
-}
-
-.end {
-	padding-top: 80px;
-}
-
+	.end {
+		padding-top: 80px;
+	}
 }
 
 @media screen and (max-width: 48em) {
+	.btn-github {
+		display: none;
+	}
 
-.btn-github {
-	display: none;
-}
+	#screen {
+		margin: 0;
+		overflow: auto;
+	}
 
-#screen {
-	margin: 0;
-	overflow: auto;
-}
+	.main-header {
+		position: fixed;
+		top: 0;
+		width: 100%;
+	}
 
-.main-header {
-	position: fixed;
-	top: 0;
-	width: 100%;
-}
+	.main-header h1 {
+		padding: 2px 0;
+		margin: 0;
+	}
 
-.main-header h1 {
-	padding: 2px 0;
-	margin: 0;
-}
+	.main-logo {
+		position: relative;
+		width: 70px;
+		height: auto;
+		display: block;
+		margin: auto;
+	}
 
-.main-logo {
-	position: relative;
-	width: 70px;
-	height: auto;
-	display: block;
-	margin: auto;
-}
+	#wrapper {
+		padding-bottom: 80px;
+	}
 
-#wrapper {
-	padding-bottom: 80px;
-}
+	.tool-bar {
+		position: fixed;
+	}
 
-.tool-bar {
-	position: fixed;
-}
+	.tool-bar {
+		bottom: 0;
+		width: 100%;
+	}
 
-.tool-bar {
-	bottom: 0;
-	width: 100%;
-}
+	#navbar {
+		height: 1.2em;
+	}
 
-#navbar {
-	height: 1.2em;
-}
+	.modeplan #navbar {
+		height: 1.6em;
+	}
 
-.modeplan #navbar {
-	height: 1.6em;
-}
+	.btn-block-settings {
+		right: 0;
+	}
 
-.btn-block-settings {
-	right: 0;
-}
+	.btn-block-summary {
+		right: 2em;
+	}
 
-.btn-block-summary {
-	right: 2em;
-}
+	/** TOGGLE RELATED LINKS**/
+	#toggle-nav {
+		float: left;
+	}
 
-/** TOGGLE RELATED LINKS**/
+	.related {
+		position: absolute;
+		bottom: 36px;
+		padding: 10px;
+	}
 
-#toggle-nav {
-	float: left;
-}
+	.related li {
+		display: block;
+		margin-bottom: 5px;
+	}
 
-.related {
-	position: absolute;
-	bottom: 36px;
-	padding: 10px;
-}
+	.related li a {
+		display: block;
+		width: 100%;
+	}
 
-.related li {
-	display: block;
-	margin-bottom: 5px;
-}
+	.is-closed .related {
+		display: none;
+	}
 
-.related li a {
-	display: block;
-	width: 100%;
-}
+	.slide {
+		padding: 0.5em;
+		-webkit-hyphens: auto;
+		-moz-hyphens: auto;
+		-ms-hyphens: auto;
+		hyphens: auto;
+		top: 10vh;
+	}
 
-.is-closed .related {
-	display: none;
-}
+	.tool-block {
+		min-height: 100%;
+		left: 0;
+		top: 0;
+	}
 
-.slide {
-	padding: 0.5em;
-	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
-	-ms-hyphens: auto;
-	hyphens: auto;
-	top: 10vh;
-}
-
-.tool-block {
-	min-height: 100%;
-	left: 0;
-	top: 0;
-}
-
-.tool-block-summary {
-	top: 0!important;
-}
-
+	.tool-block-summary {
+		top: 0!important;
+	}
 }
 
 @-webkit-keyframes horizontal {
+	0% {
+		height: 100%;
+		width: 99%;
+		opacity: 1;
+	}
 
-0% {
-	height: 100%;
-	width: 99%;
-	opacity: 1;
-}
-
-100% {
-	width: 0%;
-	height: 100%;
-	opacity: 0.9;
-}
-
+	100% {
+		width: 0%;
+		height: 100%;
+		opacity: 0.9;
+	}
 }
 
 @keyframes horizontal {
+	0% {
+		height: 100%;
+		width: 99%;
+		opacity: 1;
+	}
 
-0% {
-	height: 100%;
-	width: 99%;
-	opacity: 1;
-}
-
-100% {
-	width: 0%;
-	height: 100%;
-	opacity: 0.9;
-}
-
+	100% {
+		width: 0%;
+		height: 100%;
+		opacity: 0.9;
+	}
 }
 
 @-webkit-keyframes bottom-top {
+	0% {
+		top: 0;
+		bottom: 0;
+	}
 
-0% {
-	top: 0;
-	bottom: 0;
-}
-
-100% {
-	top: 0;
-	bottom: 100%;
-}
-
+	100% {
+		top: 0;
+		bottom: 100%;
+	}
 }
 
 @keyframes bottom-top {
+	0% {
+		top: 0;
+		bottom: 0;
+	}
 
-0% {
-	top: 0;
-	bottom: 0;
-}
-
-100% {
-	top: 0;
-	bottom: 100%;
-}
-
+	100% {
+		top: 0;
+		bottom: 100%;
+	}
 }
 
 @-webkit-keyframes top-bottom {
+	0% {
+		left: 0;
+		right: 0;
+		top: -15px;
+		bottom: 0;
+	}
 
-0% {
-	left: 0;
-	right: 0;
-	top: -15px;
-	bottom: 0;
-}
-
-100% {
-	left: 0;
-	right: 0;
-	top: 100%;
-	bottom: 0;
-}
-
+	100% {
+		left: 0;
+		right: 0;
+		top: 100%;
+		bottom: 0;
+	}
 }
 
 @keyframes top-bottom {
+	0% {
+		left: 0;
+		right: 0;
+		top: -15px;
+		bottom: 0;
+	}
 
-0% {
-	left: 0;
-	right: 0;
-	top: -15px;
-	bottom: 0;
-}
-
-100% {
-	left: 0;
-	right: 0;
-	top: 100%;
-	bottom: 0;
-}
-
+	100% {
+		left: 0;
+		right: 0;
+		top: 100%;
+		bottom: 0;
+	}
 }
 
 @-webkit-keyframes fadein {
+	0% {
+		opacity: 0;
+	}
 
-0% {
-	opacity: 0;
-}
-
-100% {
-	opacity: 1;
-}
-
+	100% {
+		opacity: 1;
+	}
 }
 
 @keyframes fadein {
+	0% {
+		opacity: 0;
+	}
 
-0% {
-	opacity: 0;
-}
-
-100% {
-	opacity: 1;
-}
-
+	100% {
+		opacity: 1;
+	}
 }
 
 @-webkit-keyframes flash {
+	0% {
+		top: 0;
+		bottom: 0;
+		opacity: 1;
+	}
 
-0% {
-	top: 0;
-	bottom: 0;
-	opacity: 1;
-}
-
-100% {
-	top: 0;
-	bottom: 0;
-	opacity: 0;
-}
-
+	100% {
+		top: 0;
+		bottom: 0;
+		opacity: 0;
+	}
 }
 
 @keyframes flash {
+	0% {
+		top: 0;
+		bottom: 0;
+		opacity: 1;
+	}
 
-0% {
-	top: 0;
-	bottom: 0;
-	opacity: 1;
-}
-
-100% {
-	top: 0;
-	bottom: 0;
-	opacity: 0;
-}
-
+	100% {
+		top: 0;
+		bottom: 0;
+		opacity: 0;
+	}
 }
 
 @-webkit-keyframes scale {
+	0% {
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	}
 
-0% {
-	-webkit-transform: scale(0);
-	transform: scale(0);
-}
-
-100% {
-	-webkit-transform: scale(1);
-	transform: scale(1);
-}
-
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
 }
 
 @keyframes scale {
+	0% {
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	}
 
-0% {
-	-webkit-transform: scale(0);
-	transform: scale(0);
-}
-
-100% {
-	-webkit-transform: scale(1);
-	transform: scale(1);
-}
-
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
 }
 
 @-webkit-keyframes flip {
+	0% {
+		-webkit-transform: rotateY(-180deg);
+		transform: rotateY(-180deg);
+	}
 
-0% {
-	-webkit-transform: rotateY(-180deg);
-	transform: rotateY(-180deg);
-}
-
-100% {
-	-webkit-transform: rotateY(0deg);
-	transform: rotateY(0deg);
-}
-
+	100% {
+		-webkit-transform: rotateY(0deg);
+		transform: rotateY(0deg);
+	}
 }
 
 @keyframes flip {
+	0% {
+		-webkit-transform: rotateY(-180deg);
+		transform: rotateY(-180deg);
+	}
 
-0% {
-	-webkit-transform: rotateY(-180deg);
-	transform: rotateY(-180deg);
+	100% {
+		-webkit-transform: rotateY(0deg);
+		transform: rotateY(0deg);
+	}
 }
-
-100% {
-	-webkit-transform: rotateY(0deg);
-	transform: rotateY(0deg);
-}
-
-}
-
