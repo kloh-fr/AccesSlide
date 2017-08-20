@@ -89,7 +89,7 @@ a:focus {
 	text-decoration: none;
 }
 
-.btn
+.btn:focus,
 a:focus,
 select:focus,
 button:focus {
