@@ -9,7 +9,7 @@ function changeColors (newCSS){
 	function navi() {
 		
 		if (window.matchMedia("(max-width:40em)").matches && document.getElementById("toggle-nav")==undefined) {			
-			n.insertAdjacentHTML('afterBegin','<button id="toggle-nav" class="toogle-btn"><span class="icon-fallback-text"><span class="icon icon-plus" aria-hidden="true"></span><span class="text">Show links</span></span></button>');
+			n.insertAdjacentHTML('afterBegin','<button id="toggle-nav">Show links</button>');
 
 			
 			t = document.getElementById('toggle-nav');  
