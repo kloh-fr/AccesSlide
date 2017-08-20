@@ -4,7 +4,6 @@
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-
 html {
 	font-family: sans-serif; /* 1 */
 	-ms-text-size-adjust: 100%; /* 2 */
@@ -631,54 +630,6 @@ img.center {
 
 .tool-bar-elt {
 	overflow: hidden;
-}
-
-.btn,
-.btn-close {
-	margin: 0 10px;
-	width: 20px;
-	height: 20px;
-	overflow: hidden;
-	white-space: nowrap;
-	text-indent: 999%;
-	background-repeat: no-repeat;/* left top */
-}
-
-.btn:hover,
-.btn:focus,
-.btn-close:hover,
-.btn-close:focus {
-	opacity: .6;
-}
-
-.btn-prev {
-	background-image: url("../img/prev.png");
-	background-position: 4px 2px;
-}
-
-.btn-goto {
-	background-image: url("../img/goto.png");
-	background-position: 1px 3px;
-}
-
-.btn-next {
-	background-image: url("../img/next.png");
-	background-position: 4px 2px;
-}
-
-.btn-block-summary {
-	background-image: url("../img/summary.png");
-	background-position: 0 3px;
-}
-
-.btn-block-settings {
-	background-image: url("../img/settings.png");
-	background-position: 0 1px;
-}
-
-.btn-close {
-	background-image: url("../img/close.png");
-	background-position: 3px 4px;
 }
 
 .modeplan .mp-none {
