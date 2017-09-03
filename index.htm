@@ -1,33 +1,29 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<title>Diaporama AccesSlide, par Access 42, personnalisé par Luc Poupard</title>
+	<title>Guide de survie front-end en environnement .NET</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Layout stylesheet -->
 	<link rel="stylesheet" href="css/font/small.css" type="text/css" media="screen">
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
 	<!-- Theme stylesheet -->
-	<link rel="stylesheet" id="currentCSS" href="css/themes/default.css" type="text/css" media="all">
+	<link rel="stylesheet" id="currentCSS" href="css/themes/cdi.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/prism.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/print.css" type="text/css" media="print">
 	<script src="js/AccesSlide.js"></script>
 	<script src="lang/lang_fr.js"></script>
-	<style>
-		.lang-btn{position:absolute;text-decoration:none;font-size:70%;right:20px;border-top:0;padding:0 5px 3px 5px;border-radius:0 0 3px 3px;z-index:900;box-shadow:0 0 2px #999;background:#fafafa}
-		.lang-btn:hover,.lang-btn:focus{background:#f2f2f2;}
-	</style>
 </head>
 
 <body>
-	<a lang="en" class="lang-btn" href="en/index.htm">English</a>
-
-	<div id="screen" class="modeplan" data-effect="Eno">
+	<div id="screen" class="modeplan" data-effect="Efadin">
 		<div id="volet"></div>
 		
 		<header id="banner" role="banner" class="main-header clearfix">
-			<h1 class="main-title">Diaporama AccesSlide, par Access 42, personnalisé par Luc Poupard</h1>
+			<a href="https://www2.cdi.ch/" target="_blank"><img id="logo" class="main-logo" src="img_slide/pw2017/cdi.png" width="397" height="159" alt="CDI" /></a>
+			<h1 class="main-title">Guide de survie front-end en environnement .NET</h1>
 		</header>
-	
+
 		<div id="nav" class="tool-bar footer-nav clearfix">
 			<div id="wrappernav">
 				<ul class="related">
@@ -43,19 +39,254 @@
 		<div id="wrapper">
 			<main role="main" id="main">
 				<section class="slide couv">
-					<h2>AccesSlide <br /><span class="small">Enfin un diaporama accessible</span></h2>
-					<p>par <a href="http://www.access42.net">Access42</a> et personnalisé par <a href="https://www.kloh.ch">Luc Poupard</a></p>
+					<h2>Guide de survie front-end<br /> en environnement <abbr lang="en" title="Dot Net">.NET</abbr></h2>
+					<p>par <a href="https://www.kloh.ch">Luc Poupard</a></p>
+					<img src="img_slide/pw2017/cdi.png" width="397" height="159" alt="CDI" />
 				</section>
-		
+
 				<section class="slide">
-					<h2>Titre</h2>
-					<p>Paragraphe</p>
+					<h2>Contexte</h2>
+					<ul>
+						<li>Designer front-end chez <a href="https://www2.cdi.ch/" target="_blank">CDI</a></li>
+						<li>Applications web développées avec le framework .NET</li>
+					</ul>
+				</section>
+
+				<section class="slide">
+					<h2>La plateforme .NET</h2>
+					<ul>
+						<li>Ensemble de composants technologiques</li>
+						<li>Développement d'applications de bureau, web, mobile…</li>
+						<li>Code pré-compilé permettant d'utiliser différents langages de programmation</li>
+					</ul>
+				</section>
+
+				<section class="slide">
+					<h2>ASP.NET ? Kézako ?</h2>
+					<ul>
+						<li>Framework permettant de créer des pages web dynamiques</li>
+						<li>
+							Plusieurs évolutions majeures
+							<ol>
+								<li>2002 : ASP.NET WebForms</li>
+								<li>2009 : ASP.NET <abbr title="Modèle-vue-contrôleur">MVC</abbr></li>
+								<li>2016 : ASP.NET Core</li>
+							</ol>
+						</li>
+					</ul>
+				</section>
+
+				<section class="slide">
+					<h2>ASP.NET WebForms</h2>
+					<ul>
+						<li>
+							Adaptation pour le web de la logique de Windows Forms
+							<ul>
+								<li>Abstraction du protocole <abbr lang="en" title="HyperText Transfer Protocol">HTTP</abbr> et du langage <abbr lang="en" title="Hypertext Markup Language">HTML</abbr></li>
+							</ul>
+						</li>
+						<li>
+							Page WebForms
+							<ol>
+								<li>Page ASP : code ASP et HTML</li>
+								<li><span lang="en">Code behind</span> : contient toute la logique</li>
+							</ol>
+						</li>
+						<li>Code ASP compilé en HTML</li>
+					</ul>
+				</section>
+
+				<section class="slide">
+					<h2>Dans WebForms il y a form</h2>
+					<p>Toute la page doit être contenue dans une balise <code class="language-html">&lt;form&gt;</code></p>
+<pre><code class="language-aspnet">&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head runat="server"&gt;&lt;/head&gt;
+&lt;body&gt;
+    &lt;form <mark>runat="server"</mark>&gt;
+
+    &lt;/form&gt;
+&lt;/body&gt;</code></pre>
+				</section>
+
+				<section class="slide">
+					<h2>Les balises <del>HTML</del> ASP.NET</h2>
+					<ul>
+						<li>Chaque balise HTML a son équivalent ASP</li>
+						<li>Exemple : <code class="language-html">&lt;asp:HyperLink&gt;</code> pour faire un lien</li>
+						<li>Problème : les développeurs n'ont aucune idée du code généré en sortie…</li>
+					</ul>
+				</section>
+
+				<section class="slide">
+					<h2>Images avec <code class="language-aspnet">&lt;asp:Image&gt;</code></h2>
+<pre><code class="language-aspnet">&lt;asp:Image ImageUrl="~/Images/logo-parisweb.png" <mark>Width="300" Height="137"</mark> AlternateText="Paris Web" runat="server" /&gt;</code></pre>
+					<p>Après compilation :</p>
+<pre><code class="language-html">&lt;img src="Images/logo-parisweb.png" alt="Paris Web" <mark>style="height:137px; width:300px;"</mark>&gt;</code></pre>
+					<p>À éviter !</p>
+				</section>
+
+				<section class="slide">
+					<h2>Images avec <code class="language-aspnet"><del>&lt;asp:Image&gt;</del></code> <code class="language-html">&lt;img&gt;</code></h2>
+					<p>À la place, il vaut mieux utiliser une balise <code class="language-html">&lt;img&gt;</code> à enrichir avec :</p>
+					<ul>
+						<li>L'attribut <code class="language-html">&lt;img … runat="server" /&gt;</code></li>
+						<li>L'attribut <code class="language-html">&lt;img … id="mon-id" /&gt;</code></li>
+					</ul>
+<pre><code class="language-html">&lt;img src="~/Images/logo-parisweb.png" width="300" height="137" alt="Paris Web" <mark>id="mon-id" runat="server"</mark> /&gt;</code></pre>
+					<p>Pro tip : c'est valable pour toutes les balises !</p>
+				</section>
+
+				<section class="slide">
+					<h2>Images avec <code class="language-aspnet"><del>&lt;asp:Image&gt;</del></code> <code class="language-html"><del>&lt;img&gt;</del></code> <code class="language-aspnet">&lt;asp:Image&gt;</code></h2>
+<pre><code class="language-aspnet">&lt;Image ImageUrl="~/Images/logo-parisweb.png" AlternateText="" runat="server" /&gt;</code></pre>
+					<p>Après compilation :</p>
+<pre><code class="language-html">&lt;img src="Images/logo-parisweb.png"&gt;</code></pre>
+					<p>Hum…</p>
+<pre><code class="language-aspnet">&lt;Image ImageUrl="~/Images/logo-parisweb.png" <mark>GenerateEmptyAlternateText="true"</mark> runat="server" /&gt;</code></pre>
+					<p>Après compilation :</p>
+<pre><code class="language-html">&lt;img src="Images/logo-parisweb.png" <mark>alt=""</mark>&gt;</code></pre>
+				</section>
+
+				<section class="slide">
+					<h2>Tableaux avec <code class="language-aspnet">&lt;asp:Table&gt;</code> (1/5)</h2>
+<pre><code class="language-aspnet">&lt;asp:Table runat="server"&gt;
+	&lt;asp:TableRow&gt;
+        &lt;asp:TableCell&gt;Entête&lt;/asp:TableCell&gt;
+        &lt;asp:TableCell&gt;Entête&lt;/asp:TableCell&gt;
+    &lt;/asp:TableRow&gt;
+&lt;/asp:Table&gt;</code></pre>
+				</section>
+
+				<section class="slide">
+					<h2>Tableaux avec <code class="language-aspnet">&lt;asp:Table&gt;</code> (2/5)</h2>
+<pre><code class="language-aspnet">&lt;asp:Table <mark>Caption="Test"</mark> runat="server"&gt;
+	&lt;asp:TableRow&gt;
+        &lt;asp:TableCell&gt;Entête&lt;/asp:TableCell&gt;
+        &lt;asp:TableCell&gt;Entête&lt;/asp:TableCell&gt;
+    &lt;/asp:TableRow&gt;
+&lt;/asp:Table&gt;</code></pre>
+				</section>
+
+				<section class="slide">
+					<h2>Tableaux avec <code class="language-aspnet">&lt;asp:Table&gt;</code> (3/5)</h2>
+<pre><code class="language-aspnet">&lt;asp:Table Caption="Test" runat="server"&gt;
+	&lt;asp:TableRow&gt;
+        <mark>&lt;asp:TableHeaderCell&gt;Entête&lt;/asp:TableHeaderCell&gt;</mark>
+        <mark>&lt;asp:TableHeaderCell&gt;Entête&lt;/asp:TableHeaderCell&gt;</mark>
+    &lt;/asp:TableRow&gt;
+    &lt;asp:TableRow&gt;
+        &lt;asp:TableCell&gt;Test&lt;/asp:TableCell&gt;
+        &lt;asp:TableCell&gt;Test&lt;/asp:TableCell&gt;
+    &lt;/asp:TableRow&gt;
+    &lt;asp:TableRow&gt;
+        &lt;asp:TableCell&gt;Pied&lt;/asp:TableCell&gt;
+        &lt;asp:TableCell&gt;Pied&lt;/asp:TableCell&gt;
+    &lt;/asp:TableRow&gt;
+&lt;/asp:Table&gt;</code></pre>
+				</section>
+
+				<section class="slide">
+					<h2>Tableaux avec <code class="language-aspnet">&lt;asp:Table&gt;</code> (4/5)</h2>
+<pre><code class="language-aspnet">&lt;asp:Table Caption="Test" runat="server"&gt;
+	<mark>&lt;asp:TableHeaderRow&gt;</mark>
+        &lt;asp:TableHeaderCell&gt;Entête&lt;/asp:TableHeaderCell&gt;
+        &lt;asp:TableHeaderCell&gt;Entête&lt;/asp:TableHeaderCell&gt;
+    <mark>&lt;/asp:TableHeaderRow&gt;</mark>
+    &lt;asp:TableRow&gt;
+        &lt;asp:TableCell&gt;Test&lt;/asp:TableCell&gt;
+        &lt;asp:TableCell&gt;Test&lt;/asp:TableCell&gt;
+    &lt;/asp:TableRow&gt;
+    <mark>&lt;asp:TableFooterRow&gt;</mark>
+        &lt;asp:TableCell&gt;Pied&lt;/asp:TableCell&gt;
+        &lt;asp:TableCell&gt;Pied&lt;/asp:TableCell&gt;
+    <mark>&lt;/asp:TableFooterRow&gt;</mark>
+&lt;/asp:Table&gt;</code></pre>
+				</section>
+
+				<section class="slide">
+					<h2>Tableaux avec <code class="language-aspnet">&lt;asp:Table&gt;</code> (5/5)</h2>
+<pre><code class="language-aspnet">&lt;asp:Table Caption="Test" runat="server"&gt;
+	&lt;asp:TableHeaderRow <mark>TableSection="TableHeader"</mark>&gt;
+        &lt;asp:TableHeaderCell&gt;Entête&lt;/asp:TableHeaderCell&gt;
+        &lt;asp:TableHeaderCell&gt;Entête&lt;/asp:TableHeaderCell&gt;
+    &lt;/asp:TableHeaderRow&gt;
+    &lt;asp:TableRow&gt;
+        &lt;asp:TableCell&gt;Test&lt;/asp:TableCell&gt;
+        &lt;asp:TableCell&gt;Test&lt;/asp:TableCell&gt;
+    &lt;/asp:TableRow&gt;
+    &lt;asp:TableFooterRow <mark>TableSection="TableFooter"</mark>&gt;
+        &lt;asp:TableCell&gt;Pied&lt;/asp:TableCell&gt;
+        &lt;asp:TableCell&gt;Pied&lt;/asp:TableCell&gt;
+    &lt;/asp:TableFooterRow&gt;
+&lt;/asp:Table&gt;</code></pre>
+				</section>
+
+				<section class="slide">
+					<h2>Champs de formulaire avec <code class="language-aspnet">&lt;asp:Textbox&gt;</code></h2>
+					<p>L'attribut <code class="language-aspnet">TextMode</code> permet de spécifier le type de champ</p>
+					<ul>
+						<li>Historiquement : MultiLine (pour générer un <code class="language-html">&lt;textarea&gt;</code>), Password et SingleLine</li>
+						<li>Depuis ASP.NET 4.5 : Color, Date, DateTime, DateTimeLocal, Mail, Month, Number, Range, Search, Time, Url et Week</li>
+					</ul>
+<pre><code class="language-aspnet">&lt;asp:TextBox ID="Number" TextMode="Number" runat="server"&gt;</code></pre></asp:TextBox>
+				</section>
+
+				<section class="slide">
+					<h2>Autres champs de formulaire</h2>
+					<p>Select, Radio, Checkbox</p>
+				</section>
+
+				<section class="slide">
+					<h2>Étiquettes de formulaire avec <code class="language-aspnet">&lt;asp:Label&gt;</code></h2>
+					<ul>
+						<li>Dans sa configuration par défaut, c'est un <code class="language-html">&lt;span&gt;</code> qui est généré…</li>
+						<li>…et l'attribut <code class="language-html">for</code> n'existe pas</li>
+					</ul>
+				</section>
+
+				<section class="slide">
+					<h2>Boucles avec <code class="language-aspnet">&lt;asp:Repeater&gt;</code></h2>
+					<ul>
+						<li>Pour générer des contenus en boucle, on utilise la balise Repeater.</li>
+						<li>ItemTemplate, HeaderTemplate, FooterTemplate, SeparatorTemplate</li>
+					</ul>
+				</section>
+
+				<section class="slide">
+					<h2>Bonus : ajouter un peu de classe</h2>
+<pre><code class="language-aspnet">&lt;asp:Label <mark>CssClass="ma-classe-css"</mark> runat="server" /&gt;</code></pre>
+				</section>
+
+				<section class="slide">
+					<h2>Aller plus haut… avec Telerik</h2>
+					<p>Équivalent de jQuery UI pour ASP.NET</p>
+				</section>
+
+				<section class="slide">
+					<h2>RenderMode : au feu !</h2>
+					<h3>test</h3>
+					<ul>
+						<li>Modife le code généré (HTML, CSS, JavaScript…) en fonction de sa valeur</li>
+						<li>Valeur Auto : le code généré dépend du contexte… de la page !</li>
+						<li>Toutes les valeurs possibles ne sont pas applicables à tous les composants</li>
+					</ul>
+				</section>
+
+				<section class="slide">
+					<h2>Web.config à la rescousse</h2>
+					<p>Permet de définir des paramètres à l'échelle de l'application (exemple : RenderMode)</p>
+				</section>
+
+				<section class="slide">
+					<h2>Conclusion</h2>
+					<p>Qu'est-ce qu'on s'amuse !</p>
 				</section>
 
 				<section  class="slide end noprint">
-					<h2 class="end-title">Merci de votre attention !</h2>
+					<h2 class="end-title">Merci !</h2>
 					<ul class="credit">
-						<li>Cette présentation a été réalisée avec <a href="https://github.com/access42/accesSlide">AccesSlide</a>, distribué sous <a href="http://www.gnu.org/copyleft/gpl.html">licence GPL</a></li>
+						<li>Cette présentation a été réalisée avec <a href="https://github.com/access42/accesSlide">AccesSlide</a>,<br /> distribué sous <a href="http://www.gnu.org/copyleft/gpl.html">licence GPL</a></li>
 					</ul>
 				</section>
 			</main><!-- #main -->
@@ -68,5 +299,6 @@
 	<div id="Dcourante" aria-live="polite" aria-atomic="true" aria-hidden="true"></div>
 
 	<script src="js/slide.js"></script>
+	<script src="js/prism.js"></script>
 </body>
 </html>

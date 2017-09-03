@@ -1,0 +1,645 @@
+/*
+Index
+======
+1. GENERIC STYLE
+	1.1 TABLE
+2. TYPO
+	2.1 HEADINGS
+	2.2 TEXT
+3. HEADER
+4. VOLET
+5. TOOLBAR
+	5.1 NAVIGATION ELEMENTS
+	5.2 RELATED LINKS
+6. PAGINATION SLIDE LINEAR LAYOUT
+7. SLIDES
+	7.1 COLUMN
+	7.2 FREAKY DISC
+8. TOOL BLOCK (SUMMARY & CONFIG)
+	8.1 TOOLS ELEMENTS
+9. CSS TRANSITIONS
+*/
+
+@font-face {
+	font-family: 'Zilla Slab';
+	src: url('../fonts/ZillaSlab-Regular.woff2') format('woff2'),
+		 url('../fonts/ZillaSlab-Regular.woff') format('woff');
+	font-weight: normal; /* 400 */
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Zilla Slab';
+	src: url('../fonts/ZillaSlab-RegularItalic.woff2') format('woff2'),
+		 url('../fonts/ZillaSlab-RegularItalic.woff') format('woff');
+	font-weight: normal; /* 400 */
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Zilla Slab';
+	src: url('../fonts/ZillaSlab-Bold.woff2') format('woff2'),
+		 url('../fonts/ZillaSlab-Bold.woff') format('woff');
+	font-weight: bold; /* 700 */
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Zilla Slab';
+	src: url('../fonts/ZillaSlab-BoldItalic.woff2') format('woff2'),
+		 url('../fonts/ZillaSlab-BoldItalic.woff') format('woff');
+	font-weight: bold; /* 700 */
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Zilla Slab Highlight';
+	src: url('../fonts/ZillaSlabHighlight-Regular.woff2') format('woff2'),
+		 url('../fonts/ZillaSlabHighlight-Regular.woff') format('woff');
+	font-weight: normal; /* 400 */
+	font-style: normal;
+}
+
+/**
+ * -------------------------
+ * @section 1. GENERIC STYLE
+ * -------------------------
+ */
+body {
+	background-color: #fff;
+	color: #333;
+	font-family: 'Zilla Slab';
+}
+
+a,
+a:hover,
+a:focus,
+button,
+button:hover,
+button:focus,
+input,
+input:hover,
+input:focus {
+	-webkit-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+	border-bottom: 2px dotted #67bee7;
+}
+
+a:hover,
+a:focus {
+	border-bottom-style: solid;
+}
+
+a:focus,
+select:focus,
+button:focus {
+	outline: 2px solid yellow;
+}
+
+button {
+	background: none;
+	border: none;
+}
+
+.slide button {
+	border: 1px solid #F9F9F9;
+	border-radius: 3px;
+	font-size: 90%;
+	margin-bottom: 2px;
+}
+
+.slide button:hover {
+	border: 1px solid orange;
+	background: #F9F9F9;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+figcaption {
+	font-size: 80%;
+}
+
+abbr {
+	text-decoration: none;
+}
+
+abbr[title] {
+	border-bottom: 1px dashed #666;
+	cursor: help;
+}
+
+code,
+kbd {
+	position: relative;
+	top: -2px;
+	padding: 1px 3px;
+}
+
+code,
+kbd,
+#wrapper code[class*="language-"] {
+	font-size: 50%;
+	line-height: 1;
+}
+
+#wrapper pre[class*="language-"] {
+	padding: .2em .5em;
+	font-size: 1em;
+	line-height: 1;
+	white-space: pre-wrap;
+	word-break: break-all;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+	border-radius: 0;
+}
+
+h3 code,
+h3 kbd {
+	background: inherit;
+}
+
+pre code {
+	border: 0;
+	white-space: pre-wrap;
+}
+
+#wrapper code[class*="language-"] mark .token {
+	color: black;
+}
+
+/** @subsection 1.1 TABLE **/
+table {
+	width: auto;
+	min-width: 70%;
+	margin: auto;
+}
+
+caption {
+	padding: 5px;
+	font-size: 150%;
+	font-weight: bold;
+	text-align: left;
+	background: #F9F9F9;
+}
+
+thead {
+	border-bottom: 1px solid #666;
+}
+
+tbody tr:nth-child(even) {
+	background-color: #F9F9F9;
+}
+
+th {
+	padding: 10px;
+	font-weight: bold;
+	text-align: center;
+}
+
+td {
+	padding: 10px;
+	text-align: center;
+}
+
+/** @subsection 1.2 LAYOUT **/
+#screen {
+	height: 100vh;
+}
+
+#wrapper {
+	height: calc(100vh - 2rem);
+	overflow-x: hidden;
+	padding-bottom: 3rem;
+	top: 2rem;
+}
+
+/**
+ * -------------------------
+ * @section 2. TYPO
+ * -------------------------
+ */
+/** @subsection 2.1 HEADINGS **/
+h2 {
+	margin-bottom: 0;
+	padding: 0;
+	line-height: 1.1em;
+	font-family: 'Zilla Slab';
+	font-weight: bold;
+	font-style: italic;
+}
+
+.couv h2,
+.end h2 {
+	float: none;
+	text-align: center;
+	background: transparent;
+	font-size: 2em;
+}
+
+h2 .subtitle {
+	display: block;
+	font-size: smaller;
+}
+
+h3 {
+	margin: 0;
+	padding: 0;
+	font-family: 'Zilla Slab';
+	font-weight: normal;
+	font-style: italic;
+}
+
+h4 {
+	margin: 0.3em;
+}
+
+h5 {
+	margin: 0.3em;
+}
+
+h6 {
+	margin: 0.3em;
+}
+
+/** @subsection 2.2 TEXT **/
+.slide p,
+.slide ul,
+.slide ol,
+.slide blockquote {
+	margin: 0.2em 0 0.5em 0;
+	line-height: 150%;
+}
+
+.slide ul ul,
+.slide ul ol {
+	font-size: 100%;
+	line-height: 100%;
+}
+
+.slide .small {
+	font-size: 90%;
+	font-weight: normal;
+}
+
+.slide .small * {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+/**
+ * -------------------------
+ * @section 3. HEADER
+ * -------------------------
+ */
+.main-header h1 {
+	font-size: 3vh;
+	color: #666;
+	font-family: 'Zilla Slab';
+	font-weight: normal;
+	font-style: italic;
+}
+
+.modeplan .main-header {
+	background: #fff;
+	box-shadow: 0 2px 3px #bbb;
+}
+
+.main-logo {
+	margin-top: .25em;
+	max-width: 150px;
+	height: auto;
+}
+
+/**
+ * -------------------------
+ * @section 4. VOLET
+ * -------------------------
+ */
+#volet {
+	background: #fff;
+}
+
+/**
+ * -------------------------
+ * @section 5. TOOLBAR
+ * -------------------------
+ */
+.tool-bar {
+	background: #fff;
+}
+
+.modeplan .tool-bar {
+	box-shadow: 0 -2px 3px #bbb;
+	background: #fff;
+}
+
+/** @subsection 5.1 NAVIGATION ELEMENTS **/
+.select-goto {
+	color: #666;
+	border: none;
+}
+
+.slide-counter-current {
+	background-color: #fff;
+	color: #666;
+	border: 1px solid #666;
+}
+
+.slide-counter-total {
+	background-color: #666;
+	color: #fff;
+	border: 1px solid transparent;
+}
+
+.btn[disabled="disabled"]:hover {
+	opacity: 1;
+	cursor: default;
+}
+
+.btn,
+.btn-close {
+	margin: 0 10px;
+	width: 20px;
+	height: 20px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-indent: 999%;
+	background-repeat: no-repeat;/* left top */
+}
+
+.btn:hover,
+.btn:focus,
+.btn-close:hover,
+.btn-close:focus {
+	opacity: .6;
+}
+
+.btn-prev {
+	background-image: url("../../img/prev.png");
+	background-position: 4px 2px;
+}
+
+.btn-goto {
+	background-image: url("../../img/goto.png");
+	background-position: 1px 3px;
+}
+
+.btn-next {
+	background-image: url("../../img/next.png");
+	background-position: 4px 2px;
+}
+
+.btn-block-summary {
+	background-image: url("../../img/summary.png");
+	background-position: 0 3px;
+}
+
+.btn-block-settings {
+	background-image: url("../../img/settings.png");
+	background-position: 0 1px;
+}
+
+.btn-close {
+	background-image: url("../../img/close.png");
+	background-position: 3px 4px;
+}
+
+/** @subsection 5.2 RELATED LINKS **/
+.related a {
+	padding: 2px 3px;
+	font-size: 70%;
+	border: 1px solid #666;
+	border-radius: 3px;
+	text-decoration: none;
+}
+
+.related a img {
+	position: relative;
+	margin-top: -4px;
+}
+
+.related a:hover {
+	background: #F9F9F9;
+	border: 1px solid #aaa;
+}
+
+/**
+ * -------------------------
+ * @section 6. PAGINATION SLIDE LINEAR LAYOUT
+ * -------------------------
+ */
+.index {
+	padding-top: 15px;
+	border-radius: 0;
+}
+
+.index span {
+	padding: 0;
+	color: #fff;
+	background-color: #666;
+}
+
+/**
+ * -------------------------
+ * @section 7. SLIDES
+ * -------------------------
+ */
+.modeplan .slide {
+	border-bottom: 2px solid #666;
+	padding-top: 1em;
+}
+
+.couv,
+.end {
+	text-align: center;
+	color: #333;
+}
+
+.couv img {
+	margin-top: 20vh;
+}
+
+.credit {
+	padding: 0;
+}
+
+.credit li {
+	display: inline-block;
+}
+
+/** @subsection 7.1 COLUMN **/
+
+/** @subsection 7.2 FREAKY DISC **/
+.list-disc {
+	padding: 0;
+}
+
+.list-disc li {
+	list-style: none;
+}
+
+button.disc {
+	display: block;
+	width: 100%;
+	border: none;
+	padding-top: 85px;
+}
+
+button.disc1 {
+	background: transparent url("../img/disc_1_gray.png") center top no-repeat;
+}
+
+button.disc1:hover,
+button.disc1:focus {
+	background: transparent url("../img/disc_1.png") center top no-repeat;
+}
+
+/**
+ * -------------------------
+ * @section 8. TOOL BLOCK (SUMMARY & CONFIG)
+ * -------------------------
+ */
+.tool-block {
+	background-color: #F9F9F9;
+	color: #666;
+	box-shadow: 0 0 10px #000;
+}
+
+.tool-block-title {
+	padding-top: 5px;
+	font-size: 1.2em;
+	text-align: center;
+	border-bottom: 1px dashed #666;
+	text-transform: uppercase;
+}
+
+.tool-block li,
+.tool-block label,
+.tool-block select {
+	font-size: 0.75em;
+}
+
+/** @subsection 8.1 TOOLS ELEMENTS **/
+.tool-block-settings fieldset {
+	border: none;
+}
+
+.tool-block-settings legend {
+	font-size: 1.5em;
+}
+
+.help {
+	border: 1px solid orange;
+	border-radius: 5px;
+	background: #666;
+	color: #fff;
+}
+
+.tool-block button:hover,
+.tool-block button:focus {
+	color: #666;
+}
+
+.btn-setting { /* Save & Default button*/
+	background-color: #666;
+	border: 1px solid  #666;
+	color: #fff;
+}
+
+.btn-setting:hover,
+.btn-setting:focus {
+	background: #F9F9F9;
+	color: #666;
+}
+
+/**
+ * -------------------------
+ * @section 9. CSS TRANSITIONS
+ * -------------------------
+ */
+#volet.Flash {
+	background: #666;
+}
+
+@media screen and (min-width: 48em) {
+	h2 {
+		float: left;
+		margin-bottom: 0.5em;
+	}
+
+	h2 + * {
+		clear: both;
+	}
+
+	h3 {
+		float: left;
+		margin-bottom: 1em;
+	}
+
+	h3 + * {
+		clear: both;
+	}
+
+	.col-left {
+		float: left;
+		width: 50%;
+		padding: 0 5% 0 0;
+	}
+
+	.col-right {
+		float: right;
+		width: 50%;
+		padding: 0 0 0 5%;
+	}
+
+	.list-disc li {
+		float: left;
+		width: 25%;
+	}
+}
+
+@media screen and (max-width: 48em) and (min-width:24em) {
+	.list-disc li {
+		float: left;
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 48em) {
+	#wrapper {
+		font-size: 120%;
+	}
+
+	.main-header h1 {
+		font-size: 80%;
+	}
+
+	.main-header {
+		background: #fff;
+		padding: 5px;
+		box-shadow: 0 2px 3px #bbb;
+	}
+
+	.tool-bar {
+		box-shadow: 0 -2px 3px #bbb;
+	}
+
+	.related {
+		background: #fff;
+		border: 3px solid #F9F9F9;
+		border-left: 0;
+		border-bottom: 0;
+	}
+}
