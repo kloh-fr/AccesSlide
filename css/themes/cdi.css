@@ -90,15 +90,15 @@ a {
 	border-bottom: 2px dotted #67bee7;
 }
 
-a:hover,
-a:focus {
+a:hover {
 	border-bottom-style: solid;
 }
 
 a:focus,
 select:focus,
 button:focus {
-	outline: 2px solid yellow;
+	border-bottom-style: none;
+	outline: 2px solid #67bee7;
 }
 
 button {
@@ -148,20 +148,13 @@ kbd,
 #wrapper code[class*="language-"] {
 	font-size: 50%;
 	line-height: 1;
+	white-space: pre-wrap;
 }
 
 #wrapper pre[class*="language-"] {
-	padding: .2em .5em;
+	padding: .2em .5em .4em .5em;
 	font-size: 1em;
 	line-height: 1;
-	white-space: pre-wrap;
-	word-break: break-all;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
-	-ms-hyphens: auto;
-	hyphens: auto;
 	border-radius: 0;
 }
 
@@ -177,6 +170,10 @@ pre code {
 
 #wrapper code[class*="language-"] mark .token {
 	color: black;
+}
+
+#wrapper code[class*="language-"] .token del {
+	color: #272822;
 }
 
 /** @subsection 1.1 TABLE **/
@@ -231,7 +228,8 @@ td {
  * -------------------------
  */
 /** @subsection 2.1 HEADINGS **/
-h2 {
+h2,
+.h2 {
 	margin-bottom: 0;
 	padding: 0;
 	line-height: 1.1em;
@@ -254,7 +252,6 @@ h2 .subtitle {
 }
 
 h3 {
-	margin: 0;
 	padding: 0;
 	font-family: 'Zilla Slab';
 	font-weight: normal;
@@ -282,10 +279,15 @@ h6 {
 	line-height: 150%;
 }
 
+.slide ul.no-list,
+.slide ol.no-list {
+	list-style: none;
+}
+
 .slide ul ul,
 .slide ul ol {
 	font-size: 100%;
-	line-height: 100%;
+	/*line-height: 100%;*/
 }
 
 .slide .small {
@@ -419,16 +421,16 @@ h6 {
 /** @subsection 5.2 RELATED LINKS **/
 .related a {
 	padding: 2px 3px;
-	font-size: 70%;
+	/*font-size: 70%;*/
 	border: 1px solid #666;
 	border-radius: 3px;
 	text-decoration: none;
 }
 
-.related a img {
+/*.related a img {
 	position: relative;
 	margin-top: -4px;
-}
+}*/
 
 .related a:hover {
 	background: #F9F9F9;
@@ -461,8 +463,7 @@ h6 {
 	padding-top: 1em;
 }
 
-.couv,
-.end {
+.couv {
 	text-align: center;
 	color: #333;
 }
@@ -473,10 +474,6 @@ h6 {
 
 .credit {
 	padding: 0;
-}
-
-.credit li {
-	display: inline-block;
 }
 
 /** @subsection 7.1 COLUMN **/
@@ -642,4 +639,19 @@ button.disc1:focus {
 		border-left: 0;
 		border-bottom: 0;
 	}
+}
+
+.code-compiled {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+}
+
+.code-compiled > * {
+	display: table-cell;
+	vertical-align: top;
+}
+
+.code-compiled > * + * {
+	border-left: 1px solid #fff;
 }
