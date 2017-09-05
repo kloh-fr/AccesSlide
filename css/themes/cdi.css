@@ -388,40 +388,27 @@ h6 {
 	opacity: .6;
 }
 
-.btn-prev {
-	background-image: url("../../img/prev.png");
-	background-position: 4px 2px;
-}
-
-.btn-goto {
-	background-image: url("../../img/goto.png");
-	background-position: 1px 3px;
-}
-
-.btn-next {
-	background-image: url("../../img/next.png");
-	background-position: 4px 2px;
-}
-
-.btn-block-summary {
-	background-image: url("../../img/summary.png");
-	background-position: 0 3px;
-}
-
-.btn-block-settings {
-	background-image: url("../../img/settings.png");
-	background-position: 0 1px;
-}
-
+.btn-prev,
+.btn-goto,
+.btn-next,
+.btn-block-summary,
+.btn-block-settings,
 .btn-close {
-	background-image: url("../../img/close.png");
-	background-position: 3px 4px;
+	background-size: 20px 20px;
+	background-position: 0 0;
 }
+
+.btn-prev			{ background-image: url("../../img/prev.svg"); }
+.btn-goto			{ background-image: url("../../img/goto.svg"); }
+.btn-next			{ background-image: url("../../img/next.svg"); }
+.btn-block-summary	{ background-image: url("../../img/summary.svg"); }
+.btn-block-settings	{ background-image: url("../../img/settings.svg"); }
+.btn-close			{ background-image: url("../../img/close.svg"); }
 
 /** @subsection 5.2 RELATED LINKS **/
 .related a {
 	padding: 2px 3px;
-	/*font-size: 70%;*/
+	font-size: 90%;
 	border: 1px solid #666;
 	border-radius: 3px;
 	text-decoration: none;
