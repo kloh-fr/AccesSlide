@@ -348,22 +348,41 @@ h6 {
 }
 
 /** @subsection 5.1 NAVIGATION ELEMENTS **/
+.tool-bar-elt {
+	overflow: initial;
+}
+
 .select-goto {
 	color: #666;
 	border: none;
 }
 
+.slide-counter span {
+	min-width: initial;
+	color: rgba(0, 0, 0, .6);
+	font-size: 90%;
+}
+
+.slide-counter span.sr {
+	clip: initial;
+	position: initial;
+	height: inherit;
+	width: inherit;
+}
+
+/*
 .slide-counter-current {
 	background-color: #fff;
-	color: #666;
-	border: 1px solid #666;
+	color: rgba(0, 0, 0, .6);
+	border: 1px solid rgba(0, 0, 0, .6);
 }
 
 .slide-counter-total {
-	background-color: #666;
+	background-color: rgba(0, 0, 0, .6);
 	color: #fff;
 	border: 1px solid transparent;
 }
+*/
 
 .btn[disabled="disabled"]:hover {
 	opacity: 1;
@@ -373,19 +392,21 @@ h6 {
 .btn,
 .btn-close {
 	margin: 0 10px;
+	padding: 0;
 	width: 20px;
 	height: 20px;
 	overflow: hidden;
 	white-space: nowrap;
 	text-indent: 999%;
 	background-repeat: no-repeat;/* left top */
+	opacity: .6;
 }
 
 .btn:hover,
 .btn:focus,
 .btn-close:hover,
 .btn-close:focus {
-	opacity: .6;
+	opacity: 1;
 }
 
 .btn-prev,
@@ -414,10 +435,12 @@ h6 {
 	text-decoration: none;
 }
 
-/*.related a img {
+/*
+.related a img {
 	position: relative;
 	margin-top: -4px;
-}*/
+}
+*/
 
 .related a:hover {
 	background: #F9F9F9;
