@@ -117,12 +117,12 @@
 					<div class="Cmasque">
 						<p>Toute la page doit être contenue dans une balise <code class="language-html">&lt;form&gt;</code></p>
 <pre><code class="language-aspnet">&lt;!DOCTYPE html&gt;
-&lt;html lang="fr"&gt;
+&lt;html&gt;
 &lt;head runat="server"&gt;&lt;/head&gt;
 &lt;body&gt;
-    &lt;form <mark>runat="server"</mark>&gt;
+	&lt;form <mark>runat="server"</mark>&gt;
 
-    &lt;/form&gt;
+	&lt;/form&gt;
 &lt;/body&gt;</code></pre>
 					</div>
 				</section>
@@ -142,10 +142,14 @@
 
 				<section class="slide">
 					<h2>Images avec <code class="language-aspnet">&lt;asp:Image&gt;</code></h2>
-<pre><code class="language-aspnet">&lt;asp:Image ImageUrl="~/Images/logo-parisweb.png" <mark>Width="300" Height="137"</mark> AlternateText="Paris Web" runat="server" /&gt;</code></pre>
-					<p>Après compilation&nbsp;:</p>
+<pre><code class="language-aspnet">&lt;asp:Image ImageUrl="~/Images/logo-parisweb.png" Width="300" Height="137" AlternateText="Paris Web" runat="server" /&gt;</code></pre>
+
+					<div class="Cmasque">
+						<p>Après compilation&nbsp;:</p>
 <pre><code class="language-html">&lt;img src="Images/logo-parisweb.png" alt="Paris Web" <mark>style="height:137px; width:300px;"</mark>&gt;</code></pre>
-					<p>À éviter&nbsp;!</p>
+					</div>
+
+					<p class="Cmasque">À éviter&nbsp;!</p>
 				</section>
 
 				<section class="slide">
@@ -155,194 +159,217 @@
 						<li>L’attribut <code class="language-html">runat="server"</code></li>
 						<li>L’attribut <code class="language-html">id</code></li>
 					</ul>
-<pre><code class="language-html">&lt;img src="~/Images/logo-parisweb.png" width="300" height="137" alt="Paris Web" <mark>id="mon-id" runat="server"</mark> /&gt;</code></pre>
-					<p>Pro tip&nbsp;: c’est valable pour toutes les balises&nbsp;!</p>
+<pre><code class="language-html">&lt;img src="~/Images/logo-parisweb.png" width="300" height="137" alt="Paris Web" <mark>id="mon_id" runat="server"</mark> /&gt;</code></pre>
+
+					<ul>
+						<li class="Cmasque">Pro tip&nbsp;: c’est valable pour toutes les balises&nbsp;!</li>
+						<li class="Cmasque">Pro tip 2&nbsp;: l’<code class="language-html">id</code> ne peut pas contenir le caractère tiret <code class="language-html">-</code></li>
+					</ul>
 				</section>
 
 				<section class="slide">
 					<h2>Images avec <code class="language-aspnet"><del>&lt;asp:Image&gt;</del></code> <code class="language-html"><del>&lt;img&gt;</del></code> <code class="language-aspnet">&lt;asp:Image&gt;</code></h2>
-<pre><code class="language-aspnet">&lt;Image ImageUrl="~/Images/logo-parisweb.png" AlternateText="" runat="server" /&gt;</code></pre>
-					<p>Après compilation&nbsp;:</p>
+
+					<div class="Cmasque">
+<pre><code class="language-aspnet">&lt;Image ImageUrl="~/Images/logo-parisweb.png" <mark>AlternateText=""</mark> runat="server" /&gt;</code></pre>
+					<div>
+
+					<div class="Cmasque">
+						<p>Après compilation&nbsp;:</p>
 <pre><code class="language-html">&lt;img src="Images/logo-parisweb.png"&gt;</code></pre>
-					<p>Hum…</p>
+						<p>Hum…</p>
+					<div>
+
+					<div class="Cmasque">
 <pre><code class="language-aspnet">&lt;Image ImageUrl="~/Images/logo-parisweb.png" <mark>GenerateEmptyAlternateText="true"</mark> runat="server" /&gt;</code></pre>
-					<p>Après compilation&nbsp;:</p>
+						<p>Après compilation&nbsp;:</p>
 <pre><code class="language-html">&lt;img src="Images/logo-parisweb.png" <mark>alt=""</mark>&gt;</code></pre>
+					<div>
 				</section>
 
 				<section class="slide">
-					<h2>Tableaux avec <code class="language-aspnet">&lt;asp:Table&gt;</code> (1/5)</h2>
+					<h2>Tableaux avec <code class="language-aspnet">&lt;asp:Table&gt;</code></h2>
 
-					<div class="code-compiled">
+					<p>
+						Un tableau de base est assez simple&nbsp;:<br/>
+						<code class="language-aspnet">&lt;asp:Table&gt;</code> pour un tableau,
+						<code class="language-aspnet">&lt;asp:TableRow&gt;</code> pour une ligne
+						et <code class="language-aspnet">&lt;asp:TableCell&gt;</code> pour une cellule.
+					</p>
+
+					<div class="Cmasque code-compiled">
 <pre><code class="language-aspnet">&lt;asp:Table runat="server"&gt;
 	&lt;asp:TableRow&gt;
-        &lt;asp:TableCell&gt;Entête&lt;/asp:TableCell&gt;
-        &lt;asp:TableCell&gt;Entête&lt;/asp:TableCell&gt;
-    &lt;/asp:TableRow&gt;
+		&lt;asp:TableCell&gt;Cellule&lt;/asp:TableCell&gt;
+		&lt;asp:TableCell&gt;Cellule&lt;/asp:TableCell&gt;
+	&lt;/asp:TableRow&gt;
 &lt;/asp:Table&gt;</code></pre>
 <pre><code class="language-html">&lt;table&gt;
 	&lt;tr&gt;
-        &lt;td&gt;Entête&lt;td&gt;
-        &lt;td&gt;Entête&lt;td&gt;
-    &lt;/tr&gt;
+		&lt;td&gt;Cellule&lt;td&gt;
+		&lt;td&gt;Cellule&lt;td&gt;
+	&lt;/tr&gt;
 &lt;/table&gt;</code></pre>
 					</div>
 				</section>
 
 				<section class="slide">
-					<h2>Tableaux avec <code class="language-aspnet">&lt;asp:Table&gt;</code> (2/5)</h2>
+					<h2>Tableaux&nbsp;: avec un titre c’est mieux</h2>
 
-					<div class="code-compiled">
-<pre><code class="language-aspnet">&lt;asp:Table <mark>Caption="Test"</mark> runat="server"&gt;
+					<p>C’est toujours assez simple, il y a un attribut <code class="language-aspnet">Caption</code> pour ça.</p>
+
+					<div class="Cmasque code-compiled">
+<pre><code class="language-aspnet">&lt;asp:Table <mark>Caption="Titre du tableau"</mark> runat="server"&gt;
 	&lt;asp:TableRow&gt;
-        &lt;asp:TableCell&gt;Entête&lt;/asp:TableCell&gt;
-        &lt;asp:TableCell&gt;Entête&lt;/asp:TableCell&gt;
-    &lt;/asp:TableRow&gt;
+		&lt;asp:TableCell&gt;Cellule&lt;/asp:TableCell&gt;
+		&lt;asp:TableCell&gt;Cellule&lt;/asp:TableCell&gt;
+	&lt;/asp:TableRow&gt;
 &lt;/asp:Table&gt;</code></pre>
 <pre><code class="language-html">&lt;table&gt;
-	&lt;caption&gt;Test&lt;/caption&gt;
-    &lt;tr&gt;
-    	&lt;th&gt;Entête&lt;/th&gt;
-    	&lt;th&gt;Entête&lt;/th&gt;
-    &lt;/tr&gt;
+	<mark>&lt;caption&gt;Titre du tableau&lt;/caption&gt;</mark>
+	&lt;tr&gt;
+		&lt;td&gt;Cellule&lt;/td&gt;
+		&lt;td&gt;Cellule&lt;/td&gt;
+	&lt;/tr&gt;
 &lt;/table&gt;</code></pre>
 					</div>
 				</section>
 
 				<section class="slide">
-					<h2>Tableaux avec <code class="language-aspnet">&lt;asp:Table&gt;</code> (3/5)</h2>
+					<h2>Tableaux&nbsp;: cellules d’entête peut-être&nbsp;?</h2>
 
-					<div class="code-compiled">
-<pre><code class="language-aspnet">&lt;asp:Table Caption="Test" runat="server"&gt;
+					<p>
+						Pas trop violent non plus, on remplace <code class="language-aspnet">&lt;asp:TableCell&gt;</code> par <code class="language-aspnet">&lt;asp:TableHeaderCell&gt;</code>.<br />
+						Il y a même l’attribut <code class="language-aspnet">Scope</code>&nbsp;!
+					</p>
+
+					<div class="Cmasque code-compiled">
+<pre><code class="language-aspnet">&lt;asp:Table Caption="Titre du tableau" runat="server"&gt;
 	&lt;asp:TableRow&gt;
-        <mark>&lt;asp:TableHeaderCell&gt;Entête&lt;/asp:TableHeaderCell&gt;</mark>
-        <mark>&lt;asp:TableHeaderCell&gt;Entête&lt;/asp:TableHeaderCell&gt;</mark>
-    &lt;/asp:TableRow&gt;
-    &lt;asp:TableRow&gt;
-        &lt;asp:TableCell&gt;Test&lt;/asp:TableCell&gt;
-        &lt;asp:TableCell&gt;Test&lt;/asp:TableCell&gt;
-    &lt;/asp:TableRow&gt;
-    &lt;asp:TableRow&gt;
-        &lt;asp:TableCell&gt;Pied&lt;/asp:TableCell&gt;
-        &lt;asp:TableCell&gt;Pied&lt;/asp:TableCell&gt;
-    &lt;/asp:TableRow&gt;
+		<mark>&lt;asp:TableHeaderCell Scope="Column"&gt;Entête&lt;/asp:TableHeaderCell&gt;</mark>
+	&lt;/asp:TableRow&gt;
+	&lt;asp:TableRow&gt;
+		&lt;asp:TableCell&gt;Cellule&lt;/asp:TableCell&gt;
+	&lt;/asp:TableRow&gt;
 &lt;/asp:Table&gt;</code></pre>
-<pre><code class="language-html">&lt;table&gt;
-	&lt;caption&gt;Test&lt;/caption&gt;
-    &lt;tr&gt;
-    	<mark>&lt;th&gt;Entête&lt;/th&gt;</mark>
-    	<mark>&lt;th&gt;Entête&lt;/th&gt;</mark>
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Test&lt;/td&gt;
-        &lt;td&gt;Test&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Pied&lt;/td&gt;
-        &lt;td&gt;Pied&lt;/td&gt;
-    &lt;/tr&gt;
+<pre class="Cmasque"><code class="language-html">&lt;table&gt;
+	&lt;caption&gt;Titre du tableau&lt;/caption&gt;
+	&lt;tr&gt;
+		<mark>&lt;th scope="col"&gt;Entête&lt;/th&gt;</mark>
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;Cellule&lt;/td&gt;
+	&lt;/tr&gt;
 &lt;/table&gt;</code></pre>
 					</div>
 				</section>
 
 				<section class="slide">
-					<h2>Tableaux avec <code class="language-aspnet">&lt;asp:Table&gt;</code> (4/5)</h2>
+					<h2>Tableaux&nbsp;: un peu de <code class="language-html">thead</code>, <code class="language-html">tbody</code> et <code class="language-html">tfoot</code> avec ça&nbsp;?</h2>
 
-					<div class="code-compiled">
-<pre><code class="language-aspnet">&lt;asp:Table Caption="Test" runat="server"&gt;
+					<p>
+						Il y a les balises <code class="language-aspnet">&lt;asp:TableHeaderRow&gt;</code> par <code class="language-aspnet">&lt;asp:TableFooterRow&gt;</code> pour ça&nbsp;:
+					</p>
+
+					<div class="Cmasque code-compiled">
+<pre><code class="language-aspnet">&lt;asp:Table Caption="Titre du tableau" runat="server"&gt;
 	<mark>&lt;asp:TableHeaderRow&gt;</mark>
-        &lt;asp:TableHeaderCell&gt;Entête&lt;/asp:TableHeaderCell&gt;
-        &lt;asp:TableHeaderCell&gt;Entête&lt;/asp:TableHeaderCell&gt;
-    <mark>&lt;/asp:TableHeaderRow&gt;</mark>
-    &lt;asp:TableRow&gt;
-        &lt;asp:TableCell&gt;Test&lt;/asp:TableCell&gt;
-        &lt;asp:TableCell&gt;Test&lt;/asp:TableCell&gt;
-    &lt;/asp:TableRow&gt;
-    <mark>&lt;asp:TableFooterRow&gt;</mark>
-        &lt;asp:TableCell&gt;Pied&lt;/asp:TableCell&gt;
-        &lt;asp:TableCell&gt;Pied&lt;/asp:TableCell&gt;
-    <mark>&lt;/asp:TableFooterRow&gt;</mark>
+		&lt;asp:TableHeaderCell Scope="Column"&gt;Entête&lt;/asp:TableHeaderCell&gt;
+	<mark>&lt;/asp:TableHeaderRow&gt;</mark>
+	&lt;asp:TableRow&gt;
+		&lt;asp:TableCell&gt;Cellule&lt;/asp:TableCell&gt;
+	&lt;/asp:TableRow&gt;
+	<mark>&lt;asp:TableFooterRow&gt;</mark>
+		&lt;asp:TableCell&gt;Pied&lt;/asp:TableCell&gt;
+	<mark>&lt;/asp:TableFooterRow&gt;</mark>
 &lt;/asp:Table&gt;</code></pre>
-<pre><code class="language-html">&lt;table&gt;
-	&lt;caption&gt;Test&lt;/caption&gt;
-    &lt;tr&gt;
-    	&lt;th&gt;Entête&lt;/th&gt;
-    	&lt;th&gt;Entête&lt;/th&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Test&lt;/td&gt;
-        &lt;td&gt;Test&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Pied&lt;/td&gt;
-        &lt;td&gt;Pied&lt;/td&gt;
-    &lt;/tr&gt;
+<pre class="Cmasque"><code class="language-html">&lt;table&gt;
+	&lt;caption&gt;Titre du tableau&lt;/caption&gt;
+	&lt;tr&gt;
+		&lt;th scope="col"&gt;Pas entête&lt;/th&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;Cellule&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;Pas pied&lt;/td&gt;
+	&lt;/tr&gt;
 &lt;/table&gt;</code></pre>
 					</div>
+
+					<p class="Cmasque">…mais en fait non&nbsp;!</p>
 				</section>
 
 				<section class="slide">
-					<h2>Tableaux avec <code class="language-aspnet">&lt;asp:Table&gt;</code> (5/5)</h2>
+					<h2>Tableaux&nbsp;: <code class="language-html">thead</code>, <code class="language-html">tbody</code> et <code class="language-html">tfoot</code> pour de bon</h2>
+
+					<p>L’attribut secret <code class="language-aspnet">TableSection</code> s’en charge&nbsp;:</p>
 
 					<div class="code-compiled">
-<pre><code class="language-aspnet">&lt;asp:Table Caption="Test" runat="server"&gt;
+<pre><code class="language-aspnet">&lt;asp:Table Caption="Titre du tableau" runat="server"&gt;
 	&lt;asp:TableHeaderRow <mark>TableSection="TableHeader"</mark>&gt;
-        &lt;asp:TableHeaderCell&gt;Entête&lt;/asp:TableHeaderCell&gt;
-        &lt;asp:TableHeaderCell&gt;Entête&lt;/asp:TableHeaderCell&gt;
-    &lt;/asp:TableHeaderRow&gt;
-    &lt;asp:TableRow&gt;
-        &lt;asp:TableCell&gt;Test&lt;/asp:TableCell&gt;
-        &lt;asp:TableCell&gt;Test&lt;/asp:TableCell&gt;
-    &lt;/asp:TableRow&gt;
-    &lt;asp:TableFooterRow <mark>TableSection="TableFooter"</mark>&gt;
-        &lt;asp:TableCell&gt;Pied&lt;/asp:TableCell&gt;
-        &lt;asp:TableCell&gt;Pied&lt;/asp:TableCell&gt;
-    &lt;/asp:TableFooterRow&gt;
+		&lt;asp:TableHeaderCell Scope="Column"&gt;Entête&lt;/asp:TableHeaderCell&gt;
+	&lt;/asp:TableHeaderRow&gt;
+	&lt;asp:TableRow&gt;
+		&lt;asp:TableCell&gt;Cellule&lt;/asp:TableCell&gt;
+	&lt;/asp:TableRow&gt;
+	&lt;asp:TableFooterRow <mark>TableSection="TableFooter"</mark>&gt;
+		&lt;asp:TableCell&gt;Pied&lt;/asp:TableCell&gt;
+	&lt;/asp:TableFooterRow&gt;
 &lt;/asp:Table&gt;</code></pre>
 <pre><code class="language-html">&lt;table&gt;
-	&lt;caption&gt;Test&lt;/caption&gt;
+	&lt;caption&gt;Titre du tableau&lt;/caption&gt;
 	<mark>&lt;thead&gt;</mark>
-        &lt;tr&gt;
-        	&lt;th&gt;Entête&lt;/th&gt;
-        	&lt;th&gt;Entête&lt;/th&gt;
-        &lt;/tr&gt;
-    <mark>&lt;/thead&gt;</mark>
-    &lt;tbody&gt;
-        &lt;tr&gt;
-	        &lt;td&gt;Test&lt;/td&gt;
-	        &lt;td&gt;Test&lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/tbody&gt;
-    <mark>&lt;tfoot&gt;</mark>
-        &lt;tr&gt;
-	        &lt;td&gt;Pied&lt;/td&gt;
-	        &lt;td&gt;Pied&lt;/td&gt;
-        &lt;/tr&gt;
-    <mark>&lt;/tfoot&gt;</mark>
+		&lt;th scope="col"&gt;Entête&lt;/th&gt;
+	<mark>&lt;/thead&gt;</mark>
+	&lt;tbody&gt;
+		&lt;tr&gt;&lt;td&gt;Cellule&lt;/td&gt;&lt;/tr&gt;
+	&lt;/tbody&gt;
+	<mark>&lt;tfoot&gt;</mark>
+		&lt;tr&gt;&lt;td&gt;Pied&lt;/td&gt;&lt;/tr&gt;
+	<mark>&lt;/tfoot&gt;</mark>
 &lt;/table&gt;</code></pre>
 					</div>
 				</section>
 
 				<section class="slide">
 					<h2>Champs de formulaire avec <code class="language-aspnet">&lt;asp:Textbox&gt;</code></h2>
-					<p>L’attribut <code class="language-aspnet">TextMode</code> permet de spécifier le type de champ</p>
 					<ul>
-						<li>Historiquement&nbsp;: MultiLine (pour générer un <code class="language-html">&lt;textarea&gt;</code>), Password et SingleLine</li>
-						<li>Depuis ASP.NET 4.5&nbsp;: Color, Date, DateTime, DateTimeLocal, Mail, Month, Number, Range, Search, Time, Url et Week</li>
+						<li>
+							L’attribut <code class="language-aspnet">TextMode</code> permet de spécifier le type de champ
+							<ul>
+								<li>Tous les types HTML5 depuis ASP.NET 4.5&nbsp;: <code class="language-aspnet">Search</code>, <code class="language-aspnet">Number</code>, <code class="language-aspnet">Color</code>, <code class="language-aspnet">Date</code>, <code class="language-aspnet">Url</code>, <code class="language-aspnet">Mail</code>, <code class="language-aspnet">Range</code>…</li>
+							</ul>
+						</li>						
 					</ul>
-<pre><code class="language-aspnet">&lt;asp:TextBox ID="Number" TextMode="Number" runat="server"&gt;</code></pre></asp:TextBox>
-				</section>
+<pre><code class="language-aspnet">&lt;asp:TextBox ID="Number" TextMode="Number" runat="server"&gt;</code></pre>
 
-				<section class="slide">
-					<h2>Autres champs de formulaire</h2>
-					<p>Select, Radio, Checkbox</p>
+					<div class="Cmasque">					
+						<h3>Autres champs de formulaire</h3>
+						<ul>
+							<li><code class="language-html">&lt;select&gt;</code> avec <code class="language-aspnet">&lt;asp:DropDownList&gt;</code> ou <code class="language-aspnet">&lt;asp:ListBox&gt;</code></li>
+							<li><code class="language-html">&lt;input type="radio"&gt;</code> avec <code class="language-aspnet">&lt;asp:CheckBox&gt;</code></li>
+							<li><code class="language-html">&lt;input type="checkbox"&gt;</code> avec <code class="language-aspnet">&lt;asp:RadioButton&gt;</code></li>
+						</ul>
+					</div>
 				</section>
 
 				<section class="slide">
 					<h2>Étiquettes de formulaire avec <code class="language-aspnet">&lt;asp:Label&gt;</code></h2>
-					<ul>
+
+					<ul class="Cmasque">
 						<li>Dans sa configuration par défaut, c'est un <code class="language-html">&lt;span&gt;</code> qui est généré…</li>
 						<li>…et l’attribut <code class="language-html">for</code> n’existe pas</li>
+						<li>Il faut utiliser <code class="language-aspnet">AssociatedControlID</code></li>
+					</ul>
+				</section>
+
+				<section class="slide">
+					<h2>Boutons <code class="language-aspnet">&lt;asp:Button&gt;</code></h2>
+					<ul>
+						<li>Génère un <code class="language-html">&lt;input type="submit"&gt;</code> par défaut, ou <code class="language-html">&lt;input type="button"&gt;</code> si on ajoute l’attribut <code class="language-aspnet">UseSubmitBehavior="false"</code></li>
+						<li>Pas de <code class="language-html">&lt;button&gt;</code> tout simple</li>
+						<li>Alternative <code class="language-aspnet">&lt;asp:LinkButton&gt;</code>… mais en fait non</li>
 					</ul>
 				</section>
 
@@ -350,7 +377,7 @@
 					<h2>Boucles avec <code class="language-aspnet">&lt;asp:Repeater&gt;</code></h2>
 					<ul>
 						<li>Pour générer des contenus en boucle, on utilise la balise Repeater.</li>
-						<li>ItemTemplate, HeaderTemplate, FooterTemplate, SeparatorTemplate</li>
+						<li><code class="language-aspnet">&lt;ItemTemplate&gt;</code>, <code class="language-aspnet">&lt;HeaderTemplate&gt;</code>, <code class="language-aspnet">&lt;FooterTemplate&gt;</code>, <code class="language-aspnet">&lt;SeparatorTemplate&gt;</code></li>
 					</ul>
 				</section>
 
@@ -361,7 +388,13 @@
 
 				<section class="slide">
 					<h2>Aller plus haut… avec Telerik</h2>
-					<p>Équivalent de jQuery UI pour ASP.NET</p>
+
+					<ul>
+						<li>Équivalent de jQuery UI pour ASP.NET</li>
+						<li><a href="http://www.telerik.com/products/aspnet-ajax.aspx">Miam la belle liste de composants</a></li>
+						<li>CSS généré dans le corps de la page, appliqué après CSS custom du head…</li>
+						<li>Solution&nbsp;: récupérer les CSS générés et les intégrer dans nos CSS puis désactiver les versions générées dans le web.config</li>
+					</ul>
 				</section>
 
 				<section class="slide">
@@ -386,9 +419,10 @@
 				<section  class="slide end noprint">
 					<h2 class="end-title">Merci&nbsp;!</h2>
 					<ul class="credit">
-						<li>Présentation <a href="https://github.com/access42/accesSlide">AccesSlide</a> par Access42 sous <a href="http://www.gnu.org/copyleft/gpl.html">licence GPL</a></li>
-						<li>Typographie <a href="https://github.com/mozilla/zilla-slab">Zilla Slab</a> par Typotheque sous <a href="https://opensource.org/licenses/OFL-1.1">licence OFL</a></li>
-						<li>Icône <a href="https://thenounproject.com/nerdyhippo/collection/minimal-ui-kit/">Minimal UI Kit</a> par David Ly sous <a href="https://creativecommons.org/licenses/by/3.0/us/">licence CC BY</a></li>
+						<li>Présentation&nbsp;: <a href="https://github.com/access42/accesSlide">AccesSlide</a> par Access42 sous <a href="http://www.gnu.org/copyleft/gpl.html">licence GPL</a></li>
+						<li>Typographie&nbsp;: <a href="https://github.com/mozilla/zilla-slab">Zilla Slab</a> par Typotheque sous <a href="https://opensource.org/licenses/OFL-1.1">licence OFL</a></li>
+						<li>Icônes&nbsp;: <a href="https://thenounproject.com/nerdyhippo/collection/minimal-ui-kit/">Minimal UI Kit</a> par David Ly sous <a href="https://creativecommons.org/licenses/by/3.0/us/">licence CC BY</a></li>
+						<li>Coloration syntaxique&nbsp;: <a href="http://prismjs.com/">Prism</a> par Lea Verou, Golmote et plus… sous <a href="https://opensource.org/licenses/MIT">licence MIT</a></li>
 					</ul>
 				</section>
 			</main><!-- #main -->

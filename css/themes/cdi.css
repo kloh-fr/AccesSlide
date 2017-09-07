@@ -468,6 +468,10 @@ h6 {
  * @section 7. SLIDES
  * -------------------------
  */
+.slide {
+	padding: 0 5%;
+}
+
 .modeplan .slide {
 	border-bottom: 2px solid #666;
 	padding-top: 1em;
@@ -599,6 +603,11 @@ button.disc1:focus {
 		clear: both;
 	}
 
+	#wrappernav,
+	.main-header {
+		padding: 0 5%;
+	}
+
 	.col-left {
 		float: left;
 		width: 50%;
@@ -659,7 +668,7 @@ button.disc1:focus {
 
 .code-compiled > * {
 	display: table-cell;
-	vertical-align: top;
+	vertical-align: middle;
 }
 
 .code-compiled > * + * {
