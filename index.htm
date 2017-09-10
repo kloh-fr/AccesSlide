@@ -41,7 +41,7 @@
 				<section class="slide">
 					<h2>Contexte</h2>
 					<ul>
-						<li>Designer front-end</li>
+						<li lang="en">Designer front-end</li>
 						<li>
 							Chez <a href="https://www2.cdi.ch/" target="_blank">CDI</a> (Conseils et Développements Informatiques)
 							<ul class="Cmasque">
@@ -161,10 +161,10 @@
 					</ul>
 <pre><code class="language-html">&lt;img src="~/Images/logo-parisweb.png" width="300" height="137" alt="Paris Web" <mark>id="mon_id" runat="server"</mark> /&gt;</code></pre>
 
-					<ul>
-						<li class="Cmasque">Pro tip&nbsp;: c’est valable pour toutes les balises&nbsp;!</li>
-						<li class="Cmasque">Pro tip 2&nbsp;: l’<code class="language-html">id</code> ne peut pas contenir le caractère tiret <code class="language-html">-</code></li>
-					</ul>
+					<p class="Cmasque note">
+						<span>À noter&nbsp;: c’est valable pour toutes les balises&nbsp;!</span><br />
+						<span class="Cmasque">À noter 2&nbsp;: l’<code class="language-html">id</code> ne peut pas contenir le caractère tiret <code class="language-html">-</code></span>
+					</p>
 				</section>
 
 				<section class="slide">
@@ -177,11 +177,14 @@
 					<div class="Cmasque">
 						<p>Après compilation&nbsp;:</p>
 <pre><code class="language-html">&lt;img src="Images/logo-parisweb.png"&gt;</code></pre>
-						<p>Hum…</p>
 					<div>
 
 					<div class="Cmasque">
+						<p>Il y a un autre attribut pour ça… <code class="language-aspnet">GenerateEmptyAlternateText</code></p>
 <pre><code class="language-aspnet">&lt;Image ImageUrl="~/Images/logo-parisweb.png" <mark>GenerateEmptyAlternateText="true"</mark> runat="server" /&gt;</code></pre>
+					<div>
+
+					<div class="Cmasque">
 						<p>Après compilation&nbsp;:</p>
 <pre><code class="language-html">&lt;img src="Images/logo-parisweb.png" <mark>alt=""</mark>&gt;</code></pre>
 					<div>
@@ -296,8 +299,6 @@
 	&lt;/tr&gt;
 &lt;/table&gt;</code></pre>
 					</div>
-
-					<p class="Cmasque">…mais en fait non&nbsp;!</p>
 				</section>
 
 				<section class="slide">
@@ -348,8 +349,8 @@
 						<h3>Autres champs de formulaire</h3>
 						<ul>
 							<li><code class="language-html">&lt;select&gt;</code> avec <code class="language-aspnet">&lt;asp:DropDownList&gt;</code> ou <code class="language-aspnet">&lt;asp:ListBox&gt;</code></li>
-							<li><code class="language-html">&lt;input type="radio"&gt;</code> avec <code class="language-aspnet">&lt;asp:CheckBox&gt;</code></li>
-							<li><code class="language-html">&lt;input type="checkbox"&gt;</code> avec <code class="language-aspnet">&lt;asp:RadioButton&gt;</code></li>
+							<li><code class="language-html">&lt;input type="radio"&gt;</code> avec <code class="language-aspnet">&lt;asp:RadioButton&gt;</code> ou <code class="language-aspnet">&lt;asp:RadioButtonList&gt;</code></li>
+							<li><code class="language-html">&lt;input type="checkbox"&gt;</code> avec <code class="language-aspnet">&lt;asp:CheckBox&gt;</code> ou <code class="language-aspnet">&lt;asp:CheckBoxList&gt;</code></li>
 						</ul>
 					</div>
 				</section>
@@ -357,72 +358,177 @@
 				<section class="slide">
 					<h2>Étiquettes de formulaire avec <code class="language-aspnet">&lt;asp:Label&gt;</code></h2>
 
-					<ul class="Cmasque">
-						<li>Dans sa configuration par défaut, c'est un <code class="language-html">&lt;span&gt;</code> qui est généré…</li>
-						<li>…et l’attribut <code class="language-html">for</code> n’existe pas</li>
-						<li>Il faut utiliser <code class="language-aspnet">AssociatedControlID</code></li>
-					</ul>
+<pre><code class="language-aspnet">&lt;asp:Label Text="Nom du label" for="Input" runat="server" /&gt;
+&lt;asp:TextBox ID="Input" runat="server" /&gt;</code></pre>
+					
+					<div class="Cmasque">
+						<p>Après compilation&nbsp;:</p>
+<pre><code class="language-aspnet">&lt;span for="Input"&gt;Nom du label&lt;/span&gt;
+&lt;input id="MainContent_Input" type="text" /&gt;</code></pre>
+					
+						<p>Dans sa configuration par défaut, c’est un <code class="language-html">&lt;span&gt;</code> qui est généré…</p>
+
+						<p class="Cmasque note">À noter&nbsp;: l’<code class="language-html">id</code> est généré dynamiquement, en fonction de la hiérarchie des éléments dans le code&nbsp;!</p>
+					</div>
 				</section>
 
 				<section class="slide">
-					<h2>Boutons <code class="language-aspnet">&lt;asp:Button&gt;</code></h2>
-					<ul>
-						<li>Génère un <code class="language-html">&lt;input type="submit"&gt;</code> par défaut, ou <code class="language-html">&lt;input type="button"&gt;</code> si on ajoute l’attribut <code class="language-aspnet">UseSubmitBehavior="false"</code></li>
-						<li>Pas de <code class="language-html">&lt;button&gt;</code> tout simple</li>
-						<li>Alternative <code class="language-aspnet">&lt;asp:LinkButton&gt;</code>… mais en fait non</li>
-					</ul>
+					<h2>Étiquettes de formulaire avec <code class="language-aspnet">&lt;asp:Label&gt;</code>. Pour de vrai.</h2>
+
+					<p>Il faut utiliser <code class="language-aspnet">AssociatedControlID</code>.</p>
+<pre><code class="language-aspnet">&lt;asp:Label Text="Nom du label" <mark>AssociatedControlID="Input"</mark> runat="server" /&gt;
+&lt;asp:TextBox ID="Input" runat="server" /&gt;</code></pre>
+					<p>Après compilation&nbsp;:</p>
+<pre><code class="language-aspnet">&lt;label for="MainContent_Input"&gt;Nom du label&lt;/label&gt;
+&lt;input id="MainContent_Input" type="text" /&gt;</code></pre>
+				</section>
+
+				<section class="slide">
+					<h2>Boutons avec <code class="language-aspnet">&lt;asp:Button&gt;</code></h2>
+
+					<p>Génère un <code class="language-html">&lt;input type="submit"&gt;</code> par défaut.</p>
+
+					<div class="code-compiled">
+<pre><code class="language-aspnet">&lt;asp:Button Text="Bouton" runat="server" /&gt;</code></pre>
+<pre><code class="language-aspnet">&lt;input type="submit" value="Bouton" /&gt;</code></pre>
+					</div>
+
+					<div class="Cmasque">
+						<p>On peut créer un <code class="language-html">&lt;input type="button"&gt;</code> à l’aide de l’attribut <code class="language-aspnet">UseSubmitBehavior="false"</code>.</p>
+
+						<div class="code-compiled">
+	<pre><code class="language-aspnet">&lt;asp:Button Text="Bouton" <mark>UseSubmitBehavior="false"</mark> runat="server" /&gt;</code></pre>
+	<pre><code class="language-aspnet">&lt;input <mark>type="button"</mark> value="Bouton" /&gt;</code></pre>
+						</div>
+					</div>
+
+					<p class="Cmasque">Pas de <code class="language-html">&lt;button&gt;</code>&nbsp;? <span class="Cmasque" lang="en">Nope.</span></p>
+
+	<pre class="Cmasque"><code class="language-aspnet">&lt;button ID="Bouton" runat="server"&gt;Bouton&lt;/button&gt;</code></pre>
+				</section>
+
+				<section class="slide">
+					<h2>
+						Par contre il y a <code class="language-aspnet">&lt;asp:LinkButton&gt;</code>…
+						<small class="Cmasque">pour faire des liens-boutons…</small>
+					</h2>
+
+					<blockquote class="Cmasque">
+						<p lang="en">Displays a hyperlink-style button control on a Web page.</p>
+						<footer>— <cite lang="en"><a href="https://msdn.microsoft.com/fr-fr/library/system.web.ui.webcontrols.linkbutton(v=vs.110).aspx">LinkButton classe</a></cite> sur <abbr title="Microsoft Developer Network" lang="en">MSDN</abbr></footer>
+					</blockquote>
+
+					<div class="Cmasque">
+						<p>En pratique ça donne ça&nbsp;:</p>
+
+						<pre><code class="language-aspnet">&lt;LinkButton Text="Kill me!" runat="server" /&gt;</code></pre>
+
+						<p>Après compilation&nbsp;:</p>
+
+						<pre><code class="language-html">&lt;a href="javascript:__doPostBack('ctl00$MainContent$ctl04','')"&gt;Kill me!&lt;/a&gt;</code></pre>						
+					</div>
 				</section>
 
 				<section class="slide">
 					<h2>Boucles avec <code class="language-aspnet">&lt;asp:Repeater&gt;</code></h2>
-					<ul>
-						<li>Pour générer des contenus en boucle, on utilise la balise Repeater.</li>
-						<li><code class="language-aspnet">&lt;ItemTemplate&gt;</code>, <code class="language-aspnet">&lt;HeaderTemplate&gt;</code>, <code class="language-aspnet">&lt;FooterTemplate&gt;</code>, <code class="language-aspnet">&lt;SeparatorTemplate&gt;</code></li>
-					</ul>
+					<p>Permet de générer des contenus en boucle, avec plusieurs balises pratiques&nbsp;:</p>
+
+<pre><code class="language-aspnet">&lt;asp:Repeater runat="server"&gt;
+    &lt;HeaderTemplate&gt;
+        &lt;ul&gt;
+    &lt;/HeaderTemplate&gt;
+    &lt;ItemTemplate&gt;
+        &lt;li&gt;Item&lt;/li&gt;
+    &lt;/ItemTemplate&gt;
+    &lt;FooterTemplate&gt;
+        &lt;/ul&gt;
+    &lt;/FooterTemplate&gt;
+    &lt;SeparatorTemplate&gt;
+        &lt;li class="separator"&gt;&lt;/li&gt;
+    &lt;/SeparatorTemplate&gt;
+&lt;/asp:Repeater&gt;</code></pre>
 				</section>
 
 				<section class="slide">
-					<h2>Bonus&nbsp;: ajouter un peu de classe</h2>
+					<h2>Bonus</h2>
+
+					<div class="Cmasque">
+						<h3>Ajouter un peu de classe</h3>
 <pre><code class="language-aspnet">&lt;asp:Label <mark>CssClass="ma-classe-css"</mark> runat="server" /&gt;</code></pre>
+					</div>
+
+					<div class="Cmasque">
+						<h3>Identifiant statique</h3>
+<pre><code class="language-aspnet">&lt;asp:Label <mark>ClientIDMode="Static"</mark> ID="Identifiant" runat="server" /&gt;</code></pre>
+						<p class="note">À noter&nbsp;: force la valeur de l’attribut <code class="language-html">id</code>, même s’il y a plusieurs occurrences.</p>
+					</div>
 				</section>
 
 				<section class="slide">
-					<h2>Aller plus haut… avec Telerik</h2>
+					<h2>Aller plus haut… avec Telerik®</h2>
 
-					<ul>
-						<li>Équivalent de jQuery UI pour ASP.NET</li>
-						<li><a href="http://www.telerik.com/products/aspnet-ajax.aspx">Miam la belle liste de composants</a></li>
-						<li>CSS généré dans le corps de la page, appliqué après CSS custom du head…</li>
-						<li>Solution&nbsp;: récupérer les CSS générés et les intégrer dans nos CSS puis désactiver les versions générées dans le web.config</li>
-					</ul>
+					<p>Équivalent de jQuery UI pour ASP.NET</p>
+
+					<div class="img-telerik">
+						<img src="img_slide/pw2017/telerik.png" alt="" width="1202" height="657" />
+					</div>
 				</section>
 
 				<section class="slide">
-					<h2>RenderMode&nbsp;: au feu&nbsp;!</h2>
+					<h2>Telerik®&nbsp;: attribut <code class="language-aspnet">RenderMode</code>, au feu&nbsp;!</h2>
 					<ul>
-						<li>Modifie le code généré (HTML, CSS, JavaScript…) en fonction de sa valeur</li>
-						<li>Valeur Auto&nbsp;: le code généré dépend du contexte… de la page&nbsp;!</li>
-						<li>Toutes les valeurs possibles ne sont pas applicables à tous les composants</li>
+						<li>
+							Modifie le code généré en fonction de sa valeur&nbsp;:
+							<ul>
+								<li><code class="language-aspnet">Classic</code>&nbsp;: mode historique, à grande dose de <code class="language-aspnet">&lt;table&gt;</code>…</li>
+								<li><code class="language-aspnet">Lightweight</code>&nbsp;: code &laquo;&nbsp;moderne&nbsp;&raquo;, avec du HTML5 et du <abbr title="Cascading Style Sheets" lang="en">CSS</abbr>3 dedans.</li>
+								<li><code class="language-aspnet">Mobile</code>&nbsp;: adapte le rendu en fonction du périphérique…</li>
+								<li><code class="language-aspnet">Auto</code>&nbsp;: le code généré dépend du contexte…</li>
+							</ul>
+						</li>
+						<li>Toutes les valeurs ne sont pas applicables à tous les composants.</li>
+						<li>Il ne peut y avoir qu’un mode de rendu par page.</li>
 					</ul>
 				</section>
 
 				<section class="slide">
 					<h2>Web.config à la rescousse</h2>
-					<p>Permet de définir des paramètres à l’échelle de l’application (Exemple&nbsp;: RenderMode)</p>
+					<p>Fichier <abbr title="Extensible Markup Language" lang="en">XML</abbr> permettant de définir des paramètres à l’échelle de l’application.</p>
+
+					<h3>Paramétrage du <code class="language-aspnet">RenderMode</code></h3>
+<pre><code class="language-xml">&lt;appSettings&gt;
+    &lt;add key="Telerik.Web.UI.RenderMode" value="lightweight" /&gt;
+&lt;/appSettings&gt;</code></pre>
+				</section>
+				
+				<section class="slide">
+					<h2>Telerik®&nbsp;:</h2>
+
+					<ul>
+						<li>CSS généré dans le corps de la page, appliqué après CSS custom du head…</li>
+						<li>Solution&nbsp;: récupérer les CSS générés et les intégrer dans nos CSS puis désactiver les versions générées dans le web.config</li>
+					</ul>
 				</section>
 
-				<section class="slide">
-					<h2>Conclusion</h2>
-					<p>Qu’est-ce qu’on s'amuse&nbsp;!</p>
+				<section class="slide thanks noprint">
+					<h2 class="end-title">Merci&nbsp;!</h2>
+
+					<p>On se voit en ligne&nbsp;!</p>
+
+					<ul>
+						<li><a href="https://www.kloh.ch" class="link__web">kloh.ch sur le web</a></li>
+						<li><a href="https://twitter.com/klohFR" class="link__twitter">@klohFR sur Twitter</a></li>
+						<li><a href="https://github.com/kloh-fr" class="link__github">kloh-fr sur github</a></li>
+					</ul>
 				</section>
 
 				<section  class="slide end noprint">
-					<h2 class="end-title">Merci&nbsp;!</h2>
+					<h2>Crédits</h2>
 					<ul class="credit">
-						<li>Présentation&nbsp;: <a href="https://github.com/access42/accesSlide">AccesSlide</a> par Access42 sous <a href="http://www.gnu.org/copyleft/gpl.html">licence GPL</a></li>
-						<li>Typographie&nbsp;: <a href="https://github.com/mozilla/zilla-slab">Zilla Slab</a> par Typotheque sous <a href="https://opensource.org/licenses/OFL-1.1">licence OFL</a></li>
-						<li>Icônes&nbsp;: <a href="https://thenounproject.com/nerdyhippo/collection/minimal-ui-kit/">Minimal UI Kit</a> par David Ly sous <a href="https://creativecommons.org/licenses/by/3.0/us/">licence CC BY</a></li>
-						<li>Coloration syntaxique&nbsp;: <a href="http://prismjs.com/">Prism</a> par Lea Verou, Golmote et plus… sous <a href="https://opensource.org/licenses/MIT">licence MIT</a></li>
+						<li>Présentation&nbsp;: <a href="https://github.com/access42/accesSlide">AccesSlide</a> par Access42, sous <a href="http://www.gnu.org/copyleft/gpl.html">licence GPL</a></li>
+						<li>Typographie&nbsp;: <a href="https://github.com/mozilla/zilla-slab">Zilla Slab</a> par Typotheque, sous <a href="https://opensource.org/licenses/OFL-1.1">licence OFL</a></li>
+						<li>Icônes&nbsp;: <a href="https://thenounproject.com/nerdyhippo/collection/minimal-ui-kit/">Minimal UI Kit</a> par David Ly, sous <a href="https://creativecommons.org/licenses/by/3.0/us/">licence CC BY</a></li>
+						<li>Coloration syntaxique&nbsp;: <a href="http://prismjs.com/">Prism</a> par Lea Verou, Golmote et plus…, sous <a href="https://opensource.org/licenses/MIT">licence MIT</a></li>
 					</ul>
 				</section>
 			</main><!-- #main -->

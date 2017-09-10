@@ -13,8 +13,7 @@ Index
 	5.2 RELATED LINKS
 6. PAGINATION SLIDE LINEAR LAYOUT
 7. SLIDES
-	7.1 COLUMN
-	7.2 FREAKY DISC
+	7.1 Code block side by side
 8. TOOL BLOCK (SUMMARY & CONFIG)
 	8.1 TOOLS ELEMENTS
 9. CSS TRANSITIONS
@@ -123,6 +122,19 @@ img {
 	height: auto;
 }
 
+.img-telerik {
+	height: 55vh;
+	padding: .5em 1em;
+	text-align: center;
+	background-color: #09060b;
+}
+
+.img-telerik img {
+	margin: 0;
+	max-height: 100%;
+	width: auto;
+}
+
 figcaption {
 	font-size: 80%;
 }
@@ -134,6 +146,10 @@ abbr {
 abbr[title] {
 	border-bottom: 1px dashed #666;
 	cursor: help;
+}
+
+[lang="en"]:not(abbr) {
+	font-style: italic;
 }
 
 code,
@@ -239,7 +255,7 @@ h2,
 }
 
 .couv h2,
-.end h2 {
+.thanks h2 {
 	float: none;
 	text-align: center;
 	background: transparent;
@@ -279,6 +295,10 @@ h6 {
 	line-height: 150%;
 }
 
+.slide p {
+	margin-top: 1em;
+}
+
 .slide ul.no-list,
 .slide ol.no-list {
 	list-style: none;
@@ -288,6 +308,20 @@ h6 {
 .slide ul ol {
 	font-size: 100%;
 	/*line-height: 100%;*/
+}
+
+.slide blockquote {
+	margin-bottom: 1em;
+	padding: .5em 1em .75em 1em;
+	font-size: 90%;
+	color: #444;
+	background-color: #f3ebeb;
+	border: 1px dotted #999;
+	border-left: 3px solid;
+}
+
+.slide blockquote p {
+	margin: 0;
 }
 
 .slide .small {
@@ -486,35 +520,45 @@ h6 {
 	margin-top: 20vh;
 }
 
-.credit {
+.thanks {
+	padding-top: 10vh;
+	text-align: center;
+}
+
+.thanks p {
+	margin-bottom: 1em;
+	font-size: 1.2em;
+	font-style: italic;
+}
+
+.thanks ul {
 	padding: 0;
 }
 
-/** @subsection 7.1 COLUMN **/
-
-/** @subsection 7.2 FREAKY DISC **/
-.list-disc {
-	padding: 0;
+.thanks li {
+	display: inline-block;
+	margin: 0 1em;
 }
 
-.list-disc li {
-	list-style: none;
+.note {
+	font-style: italic;
+	color: #555;
 }
 
-button.disc {
-	display: block;
+/** @subsection 7.1 Code block side by side **/
+.code-compiled {
+	display: table;
+	table-layout: fixed;
 	width: 100%;
-	border: none;
-	padding-top: 85px;
 }
 
-button.disc1 {
-	background: transparent url("../img/disc_1_gray.png") center top no-repeat;
+.code-compiled > * {
+	display: table-cell;
+	vertical-align: middle;
 }
 
-button.disc1:hover,
-button.disc1:focus {
-	background: transparent url("../img/disc_1.png") center top no-repeat;
+.code-compiled > * + * {
+	border-left: 1px solid #fff;
 }
 
 /**
@@ -574,6 +618,11 @@ button.disc1:focus {
 	background: #F9F9F9;
 	color: #666;
 }
+
+.tool-block-summary button {
+	vertical-align: top;
+}
+
 
 /**
  * -------------------------
@@ -658,19 +707,4 @@ button.disc1:focus {
 		border-left: 0;
 		border-bottom: 0;
 	}
-}
-
-.code-compiled {
-	display: table;
-	table-layout: fixed;
-	width: 100%;
-}
-
-.code-compiled > * {
-	display: table-cell;
-	vertical-align: middle;
-}
-
-.code-compiled > * + * {
-	border-left: 1px solid #fff;
 }
