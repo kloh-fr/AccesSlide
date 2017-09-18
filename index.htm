@@ -502,10 +502,19 @@
 				</section>
 				
 				<section class="slide">
-					<h2>Telerik®&nbsp;:</h2>
+					<h2>Telerik®&nbsp;: styles des composants</h2>
 
 					<ul>
-						<li>CSS généré dans le corps de la page, appliqué après CSS custom du head…</li>
+						<li>CSS sont générés juste avant la fermeture de la balise <code class="language-html">&lt;head&gt;</code></li>
+						<li>Solution&nbsp;: récupérer les CSS générés et les intégrer dans nos CSS puis désactiver les versions générées dans le web.config</li>
+					</ul>
+				</section>
+				
+				<section class="slide">
+					<h2>Telerik®&nbsp;: <span lang="en">white-space</span></h2>
+
+					<ul>
+						<li>CSS sont générés juste avant la fermeture de la balise <code class="language-html">&lt;head&gt;</code></li>
 						<li>Solution&nbsp;: récupérer les CSS générés et les intégrer dans nos CSS puis désactiver les versions générées dans le web.config</li>
 					</ul>
 				</section>
