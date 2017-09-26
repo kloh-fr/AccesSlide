@@ -512,7 +512,12 @@
 					</ul>
 
 <pre class="Cmasque"><code class="language-xml">&lt;appSettings&gt;
-    &lt;add key="Telerik.Web.UI.RenderMode" value="lightweight" /&gt;
+	&lt;!-- Adieu les styles RadComboBox --&gt;
+	&lt;add key="Telerik.ComboBox.EnableEmbeddedBaseStylesheet" value="false" /&gt;
+	&lt;add key="Telerik.ComboBox.EnableEmbeddedSkins" value="false" /&gt;
+	&lt;!-- Adieu tous les styles Telerik --&gt;
+	&lt;add key="Telerik.EnableEmbeddedBaseStylesheet" value="false" /&gt;
+	&lt;add key="Telerik.EnableEmbeddedSkins" value="false" /&gt;
 &lt;/appSettings&gt;</code></pre>
 				</section>
 
