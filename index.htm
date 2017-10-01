@@ -8,8 +8,8 @@
 	<link rel="stylesheet" href="css/font/small.css" type="text/css" media="screen">
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
 	<!-- Theme stylesheet -->
-	<link rel="stylesheet" id="currentCSS" href="css/themes/cdi.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/prism.css" type="text/css" media="all">
+	<link rel="stylesheet" id="currentCSS" href="css/themes/cdi.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/print.css" type="text/css" media="print">
 	<script src="js/AccesSlide.js"></script>
 	<script src="lang/lang_fr.js"></script>
@@ -45,14 +45,15 @@
 						<li>
 							Chez <a href="https://www2.cdi.ch/" target="_blank">CDI</a> (Conseils et Développements Informatiques)
 							<ul class="Cmasque">
+								<li>Développement d’applications web</li>
 								<li>Gestion d’infrastructures informatiques</li>
-								<li>
-									Développement d’applications web
-									<ul>
-										<li class="Cmasque">WordPress</li>
-										<li class="Cmasque">Solutions .NET</li>
-									</ul>
-								</li>
+							</ul>
+						</li>
+						<li class="Cmasque">
+							Projets de développement
+							<ul>
+								<li>WordPress</li>
+								<li>Solutions .NET</li>
 							</ul>
 						</li>
 					</ul>
@@ -464,72 +465,15 @@
 					</div>
 				</section>
 
-				<section class="slide">
-					<h2>Aller plus haut… avec Telerik®</h2>
-
-					<p>Équivalent de jQuery UI pour ASP.NET</p>
-
-					<div class="img-telerik">
-						<img src="img_slide/pw2017/telerik.png" alt="" width="1202" height="657" />
-					</div>
-				</section>
-
-				<section class="slide">
-					<h2>Telerik®&nbsp;: attribut <code class="language-aspnet">RenderMode</code>, au feu&nbsp;!</h2>
-					<ul>
-						<li>
-							Modifie le code généré en fonction de sa valeur&nbsp;:
-							<ul>
-								<li><code class="language-aspnet">Classic</code>&nbsp;: mode historique, à grande dose de <code class="language-aspnet">&lt;table&gt;</code>…</li>
-								<li><code class="language-aspnet">Lightweight</code>&nbsp;: code &laquo;&nbsp;moderne&nbsp;&raquo;, avec du HTML5 et du <abbr title="Cascading Style Sheets" lang="en">CSS</abbr>3 dedans.</li>
-								<li><code class="language-aspnet">Mobile</code>&nbsp;: adapte le rendu en fonction du périphérique…</li>
-								<li><code class="language-aspnet">Auto</code>&nbsp;: le code généré dépend du contexte…</li>
-							</ul>
-						</li>
-						<li>Toutes les valeurs ne sont pas applicables à tous les composants.</li>
-						<li>Il ne peut y avoir qu’un mode de rendu par page.</li>
-					</ul>
-				</section>
-
-				<section class="slide">
-					<h2>Web.config à la rescousse</h2>
-					<p>Fichier <abbr title="Extensible Markup Language" lang="en">XML</abbr> permettant de définir des paramètres à l’échelle de l’application.</p>
-
-					<h3>Paramétrage du <code class="language-aspnet">RenderMode</code></h3>
-<pre><code class="language-xml">&lt;appSettings&gt;
-    &lt;add key="Telerik.Web.UI.RenderMode" value="lightweight" /&gt;
-&lt;/appSettings&gt;</code></pre>
-				</section>
-				
-				<section class="slide">
-					<h2>Telerik®&nbsp;: styles des composants</h2>
-
-					<p>Les feuilles de styles sont générées juste avant la fermeture de la balise <code class="language-html">&lt;head&gt;</code></p>
-
-					<ul class="Cmasque">
-						<li>Solution 1&nbsp;: sélecteurs avec une plus forte spécificité</li>
-						<li class="Cmasque">Solution 2&nbsp;: récupérer les CSS générés et les intégrer dans nos CSS, puis désactiver les versions générées dans le fichier web.config</li>
-					</ul>
-
-<pre class="Cmasque"><code class="language-xml">&lt;appSettings&gt;
-	&lt;!-- Adieu les styles RadComboBox --&gt;
-	&lt;add key="Telerik.ComboBox.EnableEmbeddedBaseStylesheet" value="false" /&gt;
-	&lt;add key="Telerik.ComboBox.EnableEmbeddedSkins" value="false" /&gt;
-	&lt;!-- Adieu tous les styles Telerik --&gt;
-	&lt;add key="Telerik.EnableEmbeddedBaseStylesheet" value="false" /&gt;
-	&lt;add key="Telerik.EnableEmbeddedSkins" value="false" /&gt;
-&lt;/appSettings&gt;</code></pre>
-				</section>
-
 				<section class="slide thanks noprint">
 					<h2 class="end-title">Merci&nbsp;!</h2>
 
 					<p>On se voit en ligne&nbsp;!</p>
 
 					<ul>
-						<li><a href="https://www.kloh.ch" class="link__web">kloh.ch sur le web</a></li>
-						<li><a href="https://twitter.com/klohFR" class="link__twitter">@klohFR sur Twitter</a></li>
-						<li><a href="https://github.com/kloh-fr" class="link__github">kloh-fr sur github</a></li>
+						<li>Sur le web&nbsp;: <a href="https://www.kloh.ch" class="link__web">kloh.ch</a> et <a href="https://www2.cdi.ch/" class="link__web">cdi.ch</a></li>
+						<li>Sur Twitter&nbsp;: <a href="https://twitter.com/klohFR" class="link__twitter">@klohFR</a></li>
+						<li>Sur github&nbsp;: <a href="https://github.com/kloh-fr" class="link__github">kloh-fr</a></li>
 					</ul>
 				</section>
 
