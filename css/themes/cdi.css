@@ -544,6 +544,19 @@ h6 {
 	color: #555;
 }
 
+/** Map **/
+.switzerland-map {
+	position: fixed;
+	right: -80px;
+	bottom: 2em;
+	width: 62vw;
+	height: 53vh;
+	background-image: url("../../img_slide/pw2017/switzerland.svg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: right;
+}
+
 /** @subsection 7.1 Code block side by side **/
 .code-compiled {
 	display: table;
