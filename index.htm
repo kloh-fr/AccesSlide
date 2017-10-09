@@ -45,12 +45,12 @@
 						<li>
 							Chez <a href="https://www2.cdi.ch/" target="_blank">CDI</a> (Conseils et Développements Informatiques)
 							<div class="switzerland-map"></div>
-							<ul class="Cmasque">
+							<ul>
 								<li>Développement d’applications web</li>
 								<li>Gestion d’infrastructures informatiques</li>
 							</ul>
 						</li>
-						<li class="Cmasque">
+						<li>
 							Projets de développement
 							<ul>
 								<li>WordPress</li>
@@ -73,7 +73,7 @@
 							</ul>
 						</li>
 						<li>Développement d’applications de bureau, web, mobile,…</li>
-						<li class="Cmasque">Code pré-compilé permettant d’utiliser différents langages de programmation</li>
+						<li>Code pré-compilé permettant d’utiliser différents langages de programmation</li>
 					</ul>
 				</section>
 
@@ -81,7 +81,7 @@
 					<h2>ASP.NET</h2>
 					<ul>
 						<li>Framework permettant de créer des pages web dynamiques</li>
-						<li class="Cmasque">
+						<li>
 							Plusieurs évolutions majeures
 							<ol class="no-list">
 								<li>2002&nbsp;: WebForms</li>
@@ -89,7 +89,7 @@
 								<li>2016&nbsp;: .NET Core</li>
 							</ol>
 						</li>
-						<li class="Cmasque">Chaque &laquo;&nbsp;version&nbsp;&raquo; est indépendante</li>
+						<li>Chaque &laquo;&nbsp;version&nbsp;&raquo; est indépendante</li>
 					</ul>
 				</section>
 
@@ -102,21 +102,21 @@
 								<li>Abstraction du protocole <abbr lang="en" title="HyperText Transfer Protocol">HTTP</abbr> et du langage <abbr lang="en" title="Hypertext Markup Language">HTML</abbr></li>
 							</ul>
 						</li>
-						<li class="Cmasque">
+						<li>
 							Découpage d’une page WebForms
 							<ol>
 								<li>Page <abbr lang="en" title="Active Server Pages">ASP</abbr>&nbsp;: code ASP et HTML</li>
 								<li><span lang="en">Code behind</span>&nbsp;: contient toute la logique</li>
 							</ol>
 						</li>
-						<li class="Cmasque">Code ASP compilé en HTML</li>
+						<li>Code ASP compilé en HTML</li>
 					</ul>
 				</section>
 
 				<section class="slide">
 					<h2>Dans WebForms, il y a &laquo;&nbsp;form&nbsp;&raquo;</h2>
 
-					<div class="Cmasque">
+					<div>
 						<p>Toute la page doit être contenue dans une balise <code class="language-html">&lt;form&gt;</code></p>
 <pre><code class="language-aspnet">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -146,12 +146,12 @@
 					<h2>Images avec <code class="language-aspnet">&lt;asp:Image&gt;</code></h2>
 <pre><code class="language-aspnet">&lt;asp:Image ImageUrl="~/Images/logo-parisweb.png" Width="300" Height="137" AlternateText="Paris Web" runat="server" /&gt;</code></pre>
 
-					<div class="Cmasque">
+					<div>
 						<p>Après compilation&nbsp;:</p>
 <pre><code class="language-html">&lt;img src="Images/logo-parisweb.png" alt="Paris Web" <mark>style="height:137px; width:300px;"</mark>&gt;</code></pre>
 					</div>
 
-					<p class="Cmasque">À éviter&nbsp;!</p>
+					<p>À éviter&nbsp;!</p>
 				</section>
 
 				<section class="slide">
@@ -163,30 +163,30 @@
 					</ul>
 <pre><code class="language-html">&lt;img src="~/Images/logo-parisweb.png" width="300" height="137" alt="Paris Web" <mark>id="mon_id" runat="server"</mark> /&gt;</code></pre>
 
-					<p class="Cmasque note">
+					<p class="note">
 						<span>À noter&nbsp;: c’est valable pour toutes les balises&nbsp;!</span><br />
-						<span class="Cmasque">À noter 2&nbsp;: l’<code class="language-html">id</code> ne peut pas contenir le caractère tiret <code class="language-html">-</code></span>
+						<span>À noter 2&nbsp;: l’<code class="language-html">id</code> ne peut pas contenir le caractère tiret <code class="language-html">-</code></span>
 					</p>
 				</section>
 
 				<section class="slide">
 					<h2>Images avec <code class="language-aspnet"><del>&lt;asp:Image&gt;</del></code> <code class="language-html"><del>&lt;img&gt;</del></code> <code class="language-aspnet">&lt;asp:Image&gt;</code></h2>
 
-					<div class="Cmasque">
+					<div>
 <pre><code class="language-aspnet">&lt;Image ImageUrl="~/Images/logo-parisweb.png" <mark>AlternateText=""</mark> runat="server" /&gt;</code></pre>
 					<div>
 
-					<div class="Cmasque">
+					<div>
 						<p>Après compilation&nbsp;:</p>
 <pre><code class="language-html">&lt;img src="Images/logo-parisweb.png"&gt;</code></pre>
 					<div>
 
-					<div class="Cmasque">
+					<div>
 						<p>Il y a un autre attribut pour ça… <code class="language-aspnet">GenerateEmptyAlternateText</code></p>
 <pre><code class="language-aspnet">&lt;Image ImageUrl="~/Images/logo-parisweb.png" <mark>GenerateEmptyAlternateText="true"</mark> runat="server" /&gt;</code></pre>
 					<div>
 
-					<div class="Cmasque">
+					<div>
 						<p>Après compilation&nbsp;:</p>
 <pre><code class="language-html">&lt;img src="Images/logo-parisweb.png" <mark>alt=""</mark>&gt;</code></pre>
 					<div>
@@ -202,7 +202,7 @@
 						et <code class="language-aspnet">&lt;asp:TableCell&gt;</code> pour une cellule.
 					</p>
 
-					<div class="Cmasque code-compiled">
+					<div class="code-compiled">
 <pre><code class="language-aspnet">&lt;asp:Table runat="server"&gt;
 	&lt;asp:TableRow&gt;
 		&lt;asp:TableCell&gt;Cellule&lt;/asp:TableCell&gt;
@@ -223,7 +223,7 @@
 
 					<p>C’est toujours assez simple, il y a un attribut <code class="language-aspnet">Caption</code> pour ça.</p>
 
-					<div class="Cmasque code-compiled">
+					<div class="code-compiled">
 <pre><code class="language-aspnet">&lt;asp:Table <mark>Caption="Titre du tableau"</mark> runat="server"&gt;
 	&lt;asp:TableRow&gt;
 		&lt;asp:TableCell&gt;Cellule&lt;/asp:TableCell&gt;
@@ -248,7 +248,7 @@
 						Il y a même l’attribut <code class="language-aspnet">Scope</code>&nbsp;!
 					</p>
 
-					<div class="Cmasque code-compiled">
+					<div class="code-compiled">
 <pre><code class="language-aspnet">&lt;asp:Table Caption="Titre du tableau" runat="server"&gt;
 	&lt;asp:TableRow&gt;
 		<mark>&lt;asp:TableHeaderCell Scope="Column"&gt;Entête&lt;/asp:TableHeaderCell&gt;</mark>
@@ -257,7 +257,7 @@
 		&lt;asp:TableCell&gt;Cellule&lt;/asp:TableCell&gt;
 	&lt;/asp:TableRow&gt;
 &lt;/asp:Table&gt;</code></pre>
-<pre class="Cmasque"><code class="language-html">&lt;table&gt;
+<pre><code class="language-html">&lt;table&gt;
 	&lt;caption&gt;Titre du tableau&lt;/caption&gt;
 	&lt;tr&gt;
 		<mark>&lt;th scope="col"&gt;Entête&lt;/th&gt;</mark>
@@ -276,7 +276,7 @@
 						Il y a les balises <code class="language-aspnet">&lt;asp:TableHeaderRow&gt;</code> par <code class="language-aspnet">&lt;asp:TableFooterRow&gt;</code> pour ça&nbsp;:
 					</p>
 
-					<div class="Cmasque code-compiled">
+					<div class="code-compiled">
 <pre><code class="language-aspnet">&lt;asp:Table Caption="Titre du tableau" runat="server"&gt;
 	<mark>&lt;asp:TableHeaderRow&gt;</mark>
 		&lt;asp:TableHeaderCell Scope="Column"&gt;Entête&lt;/asp:TableHeaderCell&gt;
@@ -288,7 +288,7 @@
 		&lt;asp:TableCell&gt;Pied&lt;/asp:TableCell&gt;
 	<mark>&lt;/asp:TableFooterRow&gt;</mark>
 &lt;/asp:Table&gt;</code></pre>
-<pre class="Cmasque"><code class="language-html">&lt;table&gt;
+<pre><code class="language-html">&lt;table&gt;
 	&lt;caption&gt;Titre du tableau&lt;/caption&gt;
 	&lt;tr&gt;
 		&lt;th scope="col"&gt;Pas entête&lt;/th&gt;
@@ -347,7 +347,7 @@
 					</ul>
 <pre><code class="language-aspnet">&lt;asp:TextBox ID="Number" TextMode="Number" runat="server"&gt;</code></pre>
 
-					<div class="Cmasque">					
+					<div>					
 						<h3>Autres champs de formulaire</h3>
 						<ul>
 							<li><code class="language-html">&lt;select&gt;</code> avec <code class="language-aspnet">&lt;asp:DropDownList&gt;</code> ou <code class="language-aspnet">&lt;asp:ListBox&gt;</code></li>
@@ -363,14 +363,14 @@
 <pre><code class="language-aspnet">&lt;asp:Label Text="Nom du label" for="Input" runat="server" /&gt;
 &lt;asp:TextBox ID="Input" runat="server" /&gt;</code></pre>
 					
-					<div class="Cmasque">
+					<div>
 						<p>Après compilation&nbsp;:</p>
 <pre><code class="language-aspnet">&lt;span for="Input"&gt;Nom du label&lt;/span&gt;
 &lt;input id="MainContent_Input" type="text" /&gt;</code></pre>
 					
 						<p>Dans sa configuration par défaut, c’est un <code class="language-html">&lt;span&gt;</code> qui est généré…</p>
 
-						<p class="Cmasque note">À noter&nbsp;: l’<code class="language-html">id</code> est généré dynamiquement, en fonction de la hiérarchie des éléments dans le code&nbsp;!</p>
+						<p class="note">À noter&nbsp;: l’<code class="language-html">id</code> est généré dynamiquement, en fonction de la hiérarchie des éléments dans le code&nbsp;!</p>
 					</div>
 				</section>
 
@@ -395,7 +395,7 @@
 <pre><code class="language-aspnet">&lt;input type="submit" value="Bouton" /&gt;</code></pre>
 					</div>
 
-					<div class="Cmasque">
+					<div>
 						<p>On peut créer un <code class="language-html">&lt;input type="button"&gt;</code> à l’aide de l’attribut <code class="language-aspnet">UseSubmitBehavior="false"</code>.</p>
 
 						<div class="code-compiled">
@@ -404,23 +404,23 @@
 						</div>
 					</div>
 
-					<p class="Cmasque">Pas de <code class="language-html">&lt;button&gt;</code>&nbsp;? <span class="Cmasque" lang="en">Nope.</span></p>
+					<p>Pas de <code class="language-html">&lt;button&gt;</code>&nbsp;? <span lang="en">Nope.</span></p>
 
-	<pre class="Cmasque"><code class="language-aspnet">&lt;button ID="Bouton" runat="server"&gt;Bouton&lt;/button&gt;</code></pre>
+	<pre><code class="language-aspnet">&lt;button ID="Bouton" runat="server"&gt;Bouton&lt;/button&gt;</code></pre>
 				</section>
 
 				<section class="slide">
 					<h2>
 						Par contre il y a <code class="language-aspnet">&lt;asp:LinkButton&gt;</code>…
-						<small class="Cmasque">pour faire des liens-boutons…</small>
+						<small>pour faire des liens-boutons…</small>
 					</h2>
 
-					<blockquote class="Cmasque">
+					<blockquote>
 						<p lang="en">Displays a hyperlink-style button control on a Web page.</p>
 						<footer>— <cite lang="en"><a href="https://msdn.microsoft.com/fr-fr/library/system.web.ui.webcontrols.linkbutton(v=vs.110).aspx">LinkButton classe</a></cite> sur <abbr title="Microsoft Developer Network" lang="en">MSDN</abbr></footer>
 					</blockquote>
 
-					<div class="Cmasque">
+					<div>
 						<p>En pratique ça donne ça&nbsp;:</p>
 
 						<pre><code class="language-aspnet">&lt;asp:LinkButton Text="Kill me!" runat="server" /&gt;</code></pre>
@@ -454,12 +454,12 @@
 				<section class="slide">
 					<h2>Bonus</h2>
 
-					<div class="Cmasque">
+					<div>
 						<h3>Ajouter un peu de classe</h3>
 <pre><code class="language-aspnet">&lt;asp:Label <mark>CssClass="ma-classe-css"</mark> runat="server" /&gt;</code></pre>
 					</div>
 
-					<div class="Cmasque">
+					<div>
 						<h3>Identifiant statique</h3>
 <pre><code class="language-aspnet">&lt;asp:Label <mark>ClientIDMode="Static"</mark> ID="Identifiant" runat="server" /&gt;</code></pre>
 						<p class="note">À noter&nbsp;: force la valeur de l’attribut <code class="language-html">id</code>, même s’il y a plusieurs occurrences.</p>
